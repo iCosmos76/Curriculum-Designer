@@ -1,0 +1,13 @@
+﻿<Window x:Class="Kernel_of_curriculum.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kernel_of_curriculum"
+        mc:Ignorable="d"
+        Title="Начальное_окно" Height="180" Width="350" ResizeMode="NoResize" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button x:Name="btn_Create_project" Content="Создать проект" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top" Width="186" Click="btn_Create_project_Click"/>
+        <Button x:Name="btn_Open_exist_project" Content="Открыть существующий проект" HorizontalAlignment="Center" Margin="0,82,0,0" VerticalAlignment="Top" Width="186" Click="btn_Open_exist_project_Click"/>
+    </Grid>
+</Window>

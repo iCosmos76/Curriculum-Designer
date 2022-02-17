@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Xceed.Wpf.Toolkit;
 
 namespace Kernel_of_curriculum
 {
@@ -39,11 +40,13 @@ namespace Kernel_of_curriculum
         private string kategory_new { get; set; }
         private int idK_kategory_new { get; set; }
         private int theoryRab_old { get; set; }
-        private bool flagPromAttest_old { get; set; }
+        private int theoryRab_new { get; set; }
+        private bool flgPromAttest_old { get; set; }
         private int promAttest_old { get; set; }
-        private bool flagKurs_old { get; set; }
+        private bool flgKurs_old { get; set; }
         private int kurs_old { get; set; }
-
+        private int cnt_old { get; set; }
+        private int cnt_new { get; set; }
 
         public Disciplines_editor() {
             InitializeComponent();
@@ -61,7 +64,7 @@ namespace Kernel_of_curriculum
                     flKurs = false;
 
                 disciplines.Add(new Discipline_DataGrid(sqldisp[i].IdDisp, sqldisp[i].NameD, sqldisp[i].SokrNameD,
-                    sqldisp[i].SelBlok,sqldisp[i].NameK,sqldisp[i].TheoryRab,flProm,
+                    sqldisp[i].SelBlok,sqldisp[i].NameK,sqldisp[i].IdK,sqldisp[i].TheoryRab,flProm,
                     sqldisp[i].PromAttest,flKurs,sqldisp[i].Kurs));
 
             }
@@ -86,7 +89,7 @@ namespace Kernel_of_curriculum
 
                     disciplines.Add(new Discipline_DataGrid(sqldispidknull[i].IdDisp,
                         sqldispidknull[i].NameD,sqldispidknull[i].SokrNameD,
-                            sqldispidknull[i].SelBlok,NameKat,sqldispidknull[i].TheoryRab,flProm,
+                            sqldispidknull[i].SelBlok,NameKat,sqldispidknull[i].IdK,sqldispidknull[i].TheoryRab,flProm,
                             sqldispidknull[i].PromAttest,flKurs,sqldispidknull[i].Kurs));
                 }
             }       
@@ -115,7 +118,7 @@ namespace Kernel_of_curriculum
 
             disciplines.Add(new Discipline_DataGrid(sqllastdisp[0].IdDisp,
                 sqllastdisp[0].NameD,sqllastdisp[0].SokrNameD,
-                    sqllastdisp[0].SelBlok,NameKat,sqllastdisp[0].TheoryRab,flProm,
+                    sqllastdisp[0].SelBlok,NameKat,sqllastdisp[0].IdK,sqllastdisp[0].TheoryRab,flProm,
                     sqllastdisp[0].PromAttest,flKurs,sqllastdisp[0].Kurs));
 
         }
@@ -127,7 +130,7 @@ namespace Kernel_of_curriculum
                 disciplines.RemoveAt(dtGridElement.SelectedIndex);
             }
             else
-                MessageBox.Show("Выберите строку для удаления!","Ошибка",
+                System.Windows.MessageBox.Show("Выберите строку для удаления!","Ошибка",
                     MessageBoxButton.OK,MessageBoxImage.Error,MessageBoxResult.OK);
 
         }
@@ -145,18 +148,27 @@ namespace Kernel_of_curriculum
 
             if(kt.DialogResult == true) {
                 idK_kategory_new = kt.SelIdK();
-                kategory_new = UpdKat.Kategory = kt.SelKat();
+                kategory_new = UpdKat.NameK = kt.SelKat();
+
+                if (idK_kategory_new != idK_kategory_old || idK_kategory_old == 0)
+                    SqliteDataAccessDisp.UpdateIdK(UpdKat.IdDisp,idK_kategory_new);
+
             }              
         }
 
         private void btnAddCategory_PreviewMouseDown(object sender,MouseButtonEventArgs e) {
             var getKatContent = (Discipline_DataGrid)dtGridElement.SelectedItem;
-            kategory_old = getKatContent.Kategory;
+            if (getKatContent != null) {
+                kategory_old = getKatContent.NameK;
+                idK_kategory_old = getKatContent.IdK;
+            }
+            else
+                idK_kategory_old = 0;
         }
 
         private void dtGridElement_BeginningEdit(object sender,DataGridBeginningEditEventArgs e) {
             activeCellAtEdit_old = (Discipline_DataGrid)dtGridElement.SelectedItem;
-
+            
             if (e.Column.Header.ToString() == "Название дисциплины")
                 name_old = activeCellAtEdit_old.Name;
             if (e.Column.Header.ToString() == "Сокр. назв. дисциплины")
@@ -166,53 +178,75 @@ namespace Kernel_of_curriculum
             if (e.Column.Header.ToString() == "Теор. обучение")
                 theoryRab_old = activeCellAtEdit_old.TheoryRab;
             if (e.Column.Header.ToString() == "Промеж. аттестация") {
-                flagPromAttest_old = activeCellAtEdit_old.FlagPromAttest;
+                flgPromAttest_old = activeCellAtEdit_old.FlagPromAttest;
                 promAttest_old = activeCellAtEdit_old.PromAttest;
             }
             if (e.Column.Header.ToString() == "Курс. работа/проект") {
-                flagKurs_old = activeCellAtEdit_old.FlagKurs;
+                flgKurs_old = activeCellAtEdit_old.FlagKurs;
                 kurs_old = activeCellAtEdit_old.Kurs;
             }
 
-            Debug.WriteLine($"{name_old} + {sokrName_old} + {selBlok_old} + {kategory_old} + " +
-                $"{theoryRab_old} + {flagPromAttest_old} + {promAttest_old} + {flagKurs_old} + {kurs_old}");
-                
+            //Debug.WriteLine($"{name_old} + {sokrName_old} + {selBlok_old} + {kategory_old} + {idK_kategory_old} + " +
+            //    $"{theoryRab_old} + {flgPromAttest_old} + {promAttest_old} + {flgKurs_old} + {kurs_old}");
+
+            //Debug.WriteLine($"{activeCellAtEdit_old.Name} + {activeCellAtEdit_old.SokrName} " +
+            //    $"+ {activeCellAtEdit_old.SelBlok} + {activeCellAtEdit_old.NameK} + {activeCellAtEdit_old.IdK} + " +
+            //    $"{activeCellAtEdit_old.TheoryRab} + {activeCellAtEdit_old.FlagPromAttest} + " +
+            //    $"{activeCellAtEdit_old.PromAttest} + {activeCellAtEdit_old.FlagKurs} + {activeCellAtEdit_old.Kurs}");
+
         }
 
         private void dtGridElement_RowEditEnding(object sender,DataGridRowEditEndingEventArgs e) {
             var get_elem = (Discipline_DataGrid)e.Row.Item;
 
-            //if (get_elem.NameK != nmk_old && get_elem.Cvet.ToString() != cvt_old)
-            //    SqliteDataAccessKat.UpdateKatNameCvet(get_elem.IdK,get_elem.NameK,get_elem.Cvet.ToString());
-            //if (get_elem.NameK != nmk_old)
-            //    SqliteDataAccessKat.UpdateKatNameK(get_elem.IdK,get_elem.NameK);
-            //if (get_elem.Cvet.ToString() != cvt_old)
-            //    SqliteDataAccessKat.UpdateKatCvet(get_elem.IdK,get_elem.Cvet.ToString());
+            if (get_elem.Name != name_old)
+                SqliteDataAccessDisp.UpdateNameD(get_elem.IdDisp,get_elem.Name);
+            if (get_elem.SokrName != sokrName_old )
+                SqliteDataAccessDisp.UpdateSokrNameD(get_elem.IdDisp,get_elem.SokrName);
+            if (get_elem.SelBlok != selBlok_old)
+                SqliteDataAccessDisp.UpdateSelBlok(get_elem.IdDisp,get_elem.SelBlok);
+            if (get_elem.TheoryRab != theoryRab_old)
+                SqliteDataAccessDisp.UpdateTheoryRab(get_elem.IdDisp,theoryRab_new);
+            if (get_elem.FlagPromAttest != flgPromAttest_old)
+                SqliteDataAccessDisp.UpdateFlagPromAttest(get_elem.IdDisp, get_elem.FlagPromAttest ? 1 : 0);
+            if (get_elem.PromAttest != promAttest_old)
+                SqliteDataAccessDisp.UpdatePromAttest(get_elem.IdDisp,get_elem.PromAttest);
+            if (get_elem.FlagKurs != flgKurs_old)
+                SqliteDataAccessDisp.UpdateFlagKurs(get_elem.IdDisp,get_elem.FlagKurs ? 1 : 0);
+            if (get_elem.Kurs != kurs_old)
+                SqliteDataAccessDisp.UpdateKurs(get_elem.IdDisp,get_elem.Kurs);
+            
         }
+
+        //private void updwPromAttest_ValueChanged(object sender,RoutedPropertyChangedEventArgs<object> e) {
+        //    //var get_elem_new = (Discipline_DataGrid)dtGridElement.SelectedItem;
+        //    //if (get_elem_new)
+        //}
+
+        //private void updwTheoryRab_ValueChanged(object sender,RoutedPropertyChangedEventArgs<object> e) {
+        //    var get_elem_new = (Discipline_DataGrid)dtGridElement.SelectedItem;
+
+        //    cnt_new = dtGridElement.Items.Count;
+
+            
+
+        //    if (get_elem_new != null) {
+        //        theoryRab_new = get_elem_new.TheoryRab;
+        //        System.Windows.MessageBox.Show($"{theoryRab_new}");
+        //        if (theoryRab_new != theoryRab_old)
+        //            SqliteDataAccessDisp.UpdateTheoryRab(get_elem_new.IdDisp,theoryRab_new);
+        //    }
+        //}
+
+        //private void updwTheoryRab_GotFocus(object sender,RoutedEventArgs e) {
+        //    var get_elem_old = sender as IntegerUpDown;
+
+        //    if (get_elem_old != null) {
+        //        theoryRab_old = (int)get_elem_old.Value;
+        //        cnt_old = dtGridElement.Items.Count;
+        //    }
+        //}
     }
-
-    //public class Blok : INotifyPropertyChanged {
-
-    //    public event PropertyChangedEventHandler PropertyChanged;
-    //    public int idB { get; set; }
-    //    public string NameB {
-    //        get { return nameB; }
-    //        set {
-    //            nameB = value;
-    //            if (PropertyChanged != null) {
-    //                PropertyChanged(this,new PropertyChangedEventArgs("NameB"));
-    //            }
-    //        } 
-    //    }
-
-    //    private string nameB;
-
-    //    public Blok (int idb ,string nameb) {
-    //        idB = idb;
-    //        NameB = nameb;
-
-    //    }
-    //}
 
     public class Blok {
         public string NameB { get; set; }
@@ -227,6 +261,7 @@ namespace Kernel_of_curriculum
         public string NameD { get; set; }
         public string SokrNameD { get; set; }
         public string NameK { get; set; }
+        public int IdK { get; set; }
         public int SelBlok { get; set; } 
         public int TheoryRab { get; set; }
         public int FlagPromAttest { get; set; }
@@ -237,13 +272,14 @@ namespace Kernel_of_curriculum
         public Discipline_Conn_Data_Base() { }
 
         public Discipline_Conn_Data_Base(string nameD, string sokrNameD,
-            int selBlok, string nameK, int theoryRab, int flagPromAttest, 
+            int selBlok, string nameK, int idK, int theoryRab, int flagPromAttest, 
             int promAttest, int flagKurs, int kurs) {
 
             NameD = nameD;
             SokrNameD = sokrNameD;
             SelBlok = selBlok;
             NameK = nameK;
+            IdK = idK;
             TheoryRab = theoryRab;
             FlagPromAttest = flagPromAttest;
             PromAttest = promAttest;
@@ -257,7 +293,8 @@ namespace Kernel_of_curriculum
         private int idDisp { get; set; }
         private string name { get; set; }
         private string sokrName { get; set; }
-        private string kategory { get; set; }
+        private string nameK { get; set; }
+        private int idK { get; set; }
         private ObservableCollection<Blok> blok { get; set; } = new ObservableCollection<Blok>(){
                 new Blok("Дисциплины"),
                 new Blok("Практика"),
@@ -291,13 +328,20 @@ namespace Kernel_of_curriculum
                 OnPropertyChanged("SokrName");
             }
         }
-        public string Kategory {
-            get { return kategory; }
+        public string NameK {
+            get { return nameK; }
             set {
-                kategory = value;
-                OnPropertyChanged("kategory");
+                nameK = value;
+                OnPropertyChanged("NameK");
             }
         }
+        public int IdK {
+            get { return idK; }
+            set {
+                idK = value;
+                OnPropertyChanged("IdK");
+            }
+        }  
         public ObservableCollection<Blok> Blok {
             get { return blok; }
             set {
@@ -349,14 +393,15 @@ namespace Kernel_of_curriculum
         }
 
         public Discipline_DataGrid(int idDisp, string name,string sokrName,
-            int selBlok,string kategory, int theoryRab,bool flagPromAttest,
+            int selBlok,string nameK, int idK, int theoryRab,bool flagPromAttest,
             int promAttest,bool flagKurs,int kurs) {
 
             IdDisp = idDisp;
             Name = name;
             SokrName = sokrName;
             SelBlok = selBlok;
-            Kategory = kategory;       
+            NameK = nameK;
+            IdK = idK;
             TheoryRab = theoryRab;
             FlagPromAttest = flagPromAttest;
             PromAttest = promAttest;

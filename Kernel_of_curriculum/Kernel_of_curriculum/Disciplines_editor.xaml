@@ -32,7 +32,7 @@
                 <DataGridTemplateColumn Header="Блок" HeaderStyle="{StaticResource CenterGridHeaderStyle}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <ComboBox ItemsSource="{Binding Path=Blok, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding SelBlok}">
+                            <ComboBox ItemsSource="{Binding Path=Blok, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding SelBlok, UpdateSourceTrigger=PropertyChanged}">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding NameB, UpdateSourceTrigger=PropertyChanged}" />
@@ -45,38 +45,53 @@
                 <DataGridTemplateColumn x:Name="Categ" Header="Категория" HeaderStyle="{StaticResource CenterGridHeaderStyle}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="btnAddCategory" Content="{Binding Kategory, UpdateSourceTrigger=PropertyChanged}" Click="btnAddCategory_Click" PreviewMouseDown="btnAddCategory_PreviewMouseDown"/>
+                            <Button x:Name="btnAddCategory" Content="{Binding NameK, UpdateSourceTrigger=PropertyChanged}" Click="btnAddCategory_Click" PreviewMouseDown="btnAddCategory_PreviewMouseDown"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Теор. обучение" HeaderStyle="{StaticResource CenterGridHeaderStyle}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <xctk:IntegerUpDown Width="40" Height="20" Value="{Binding TheoryRab, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Text="{Binding TheoryRab, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <xctk:IntegerUpDown x:Name="updwTheoryRab" Width="40" Height="20" DefaultValue="3" Value="{Binding TheoryRab, UpdateSourceTrigger=PropertyChanged}" ValueChanged="updwTheoryRab_ValueChanged" GotFocus="updwTheoryRab_GotFocus" AllowTextInput="False"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Промеж. аттестация" HeaderStyle="{StaticResource CenterGridHeaderStyle}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <CheckBox IsChecked="{Binding FlagPromAttest, UpdateSourceTrigger=PropertyChanged}">
-                                    <xctk:IntegerUpDown Value="{Binding PromAttest}" IsEnabled="{Binding FlagPromAttest, UpdateSourceTrigger=PropertyChanged}" Width="40" Height="20" CultureInfo="ru-RU"/>
-                                </CheckBox>
-                            </StackPanel>
+                            <TextBlock Text="{Binding PromAttest, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" IsEnabled="{Binding FlagPromAttest, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <CheckBox IsChecked="{Binding FlagPromAttest, UpdateSourceTrigger=PropertyChanged}"/>
+                                <xctk:IntegerUpDown x:Name="updwPromAttest" Value="{Binding PromAttest, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding FlagPromAttest, UpdateSourceTrigger=PropertyChanged}" Width="40" Height="20" CultureInfo="ru-RU" ValueChanged="updwPromAttest_ValueChanged" AllowTextInput="False"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Курс. работа/проект" HeaderStyle="{StaticResource CenterGridHeaderStyle}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <CheckBox IsChecked="{Binding FlagKurs, UpdateSourceTrigger=PropertyChanged}">
-                                    <xctk:IntegerUpDown Value="{Binding Kurs}" IsEnabled="{Binding FlagKurs, UpdateSourceTrigger=PropertyChanged}" Width="40" Height="20" CultureInfo="ru-RU" />
-                                </CheckBox>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding Kurs, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" IsEnabled="{Binding FlagKurs, UpdateSourceTrigger=PropertyChanged}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <CheckBox IsChecked="{Binding FlagKurs, UpdateSourceTrigger=PropertyChanged}"/>
+                                <xctk:IntegerUpDown x:Name="updwKurs" Value="{Binding Kurs, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding FlagKurs, UpdateSourceTrigger=PropertyChanged}" Width="40" Height="20" CultureInfo="ru-RU" AllowTextInput="False" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
