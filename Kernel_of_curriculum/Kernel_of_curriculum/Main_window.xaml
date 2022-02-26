@@ -7,7 +7,7 @@
         xmlns:dd="urn:gong-wpf-dragdrop"
         xmlns:local="clr-namespace:Kernel_of_curriculum"
         mc:Ignorable="d"
-        Title="Главное_окно" Height="700" Width="1230" WindowStartupLocation="CenterScreen" SizeToContent="Manual" ShowInTaskbar="False">
+        Title="Главное_окно" Height="700" Width="1480" WindowStartupLocation="CenterScreen" SizeToContent="Manual" ShowInTaskbar="False">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="88*"/>
@@ -111,12 +111,6 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
 
-            <ListBoxItem BorderBrush="Black" HorizontalContentAlignment="Stretch">
-                <local:Tile/>
-            </ListBoxItem>
-            <ListBoxItem BorderBrush="Black" HorizontalContentAlignment="Stretch" >
-                <local:Tile/>
-            </ListBoxItem>
         </ListBox>
 
         <ListBox
@@ -138,15 +132,6 @@
                                 IsItemsHost="True"/>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
-            <ListBoxItem BorderBrush="Black" HorizontalContentAlignment="Stretch">
-                <local:Tile/>
-            </ListBoxItem>
-            <ListBoxItem BorderBrush="Black" HorizontalContentAlignment="Stretch" >
-                <local:Tile/>
-            </ListBoxItem>
-            <ListBoxItem BorderBrush="Black" HorizontalContentAlignment="Stretch" >
-                <local:Tile/>
-            </ListBoxItem>
         </ListBox>
         <ListBox
             x:Name="lbScndSem"
@@ -167,15 +152,6 @@
                         IsItemsHost="True"/>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
-            <ListBoxItem BorderBrush="Black" HorizontalContentAlignment="Stretch">
-                <local:Tile/>
-            </ListBoxItem>
-            <ListBoxItem BorderBrush="Black" HorizontalContentAlignment="Stretch" >
-                <local:Tile/>
-            </ListBoxItem>
-            <ListBoxItem BorderBrush="Black" HorizontalContentAlignment="Stretch" >
-                <local:Tile/>
-            </ListBoxItem>
         </ListBox>
         <ListBox
             x:Name="lbThrdSem"

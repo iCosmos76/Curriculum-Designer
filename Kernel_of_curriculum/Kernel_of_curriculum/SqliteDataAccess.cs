@@ -21,8 +21,8 @@ namespace Kernel_of_curriculum {
         public static void AddKat(Kategory_Conn_Date_Base kateg) {
 
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) {
-                cnn.Execute("insert into Kategory (NameK, Cvet)" +
-                    "values (@NameK, @Cvet)",kateg);
+                cnn.Execute("insert into Kategory (NameK, CvetK)" +
+                    "values (@NameK, @CvetK)",kateg);
             }
         }
 
@@ -45,16 +45,16 @@ namespace Kernel_of_curriculum {
         public static void UpdateKatCvet(int IdK,string Cvet) {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) {
                 cnn.Execute("update Kategory " +
-                    $"set Cvet = '{Cvet}' " +
+                    $"set CvetK = '{Cvet}' " +
                     $"where idK = {IdK}");
             }
         }
 
-        public static void UpdateKatNameCvet(int IdK,string NameK,string Cvet) {
+        public static void UpdateKatNameCvet(int IdK,string NameK,string CvetK) {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) {
                 cnn.Execute("update Kategory " +
                     $"set NameK = '{NameK}', " +
-                    $"Cvet = '{Cvet}' " +
+                    $"CvetK = '{CvetK}' " +
                     $"where idK = {IdK}");
             }
         }
@@ -70,11 +70,11 @@ namespace Kernel_of_curriculum {
 
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) {
                 var output = cnn.Query<Discipline_Conn_Data_Base>(
-                    "select IdDisp, NameD, SokrNameD, SelBlok, NameK, Kategory.IdK, TheoryRab, FlagPromAttest, PromAttest, FlagKurs, Kurs " +
+                    "select IdDisp, NameD, SokrNameD, SelBlok, Kategory.IdK, Kategory.NameK, Kategory.CvetK, " +
+                    "TheoryRab, FlagPromAttest, PromAttest, FlagKurs, Kurs " +
                     "from Discipline, Kategory " +
                     "where Discipline.IdK = Kategory.IdK",new DynamicParameters());
-                
-                
+                          
                 return output.ToList();
             }
         }

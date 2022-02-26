@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:Kernel_of_curriculum"
-        xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml" x:Class="Kernel_of_curriculum.Disciplines_editor"
+        xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml" 
+        x:Class="Kernel_of_curriculum.Disciplines_editor"
+
+    
         mc:Ignorable="d"
         Title="Редактор_дисциплин" Height="600" Width="1090" Background="White" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" WindowState="Normal">
     <Window.Resources>
@@ -23,7 +26,7 @@
         </Grid.ColumnDefinitions>
         <Button x:Name="btnAddElement" Content="Добавить элемент" Click="btnAddElement_Click" RenderTransformOrigin="0.527,-0.158" FontSize="13" Grid.Column="1" Height="34" VerticalAlignment="Bottom"/>
         <Button x:Name="btnDelElement" Content="Удалить элемент" Click="btnDelElement_Click" Height="34" VerticalAlignment="Bottom" FontSize="13"/>
-        <Button x:Name="btnApplyChanges" Content="Применить изменения" Click="btnApplyChanges_Click" Grid.Column="2" FontSize="13" Height="34" VerticalAlignment="Bottom"/>
+        <Button x:Name="btnApplyChanges" Content="Выбрать элемент" Click="btnApplyChanges_Click" Grid.Column="2" FontSize="13" Height="34" VerticalAlignment="Bottom"/>
 
         <DataGrid x:Name="dtGridElement" Margin="0,0,0,34" 
                   ColumnWidth="*" 
@@ -72,11 +75,13 @@
                     SortMemberPath="NameK">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button 
+                            <local:CustomButton 
                                 x:Name="btnAddCategory" 
                                 Content="{Binding NameK, UpdateSourceTrigger=PropertyChanged}" 
                                 Click="btnAddCategory_Click" 
-                                PreviewMouseDown="btnAddCategory_PreviewMouseDown"/>
+                                PreviewMouseDown="btnAddCategory_PreviewMouseDown"
+                                ColorKategory="{Binding CvetK, UpdateSourceTrigger=PropertyChanged}"
+                                Background="{Binding CvetK, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

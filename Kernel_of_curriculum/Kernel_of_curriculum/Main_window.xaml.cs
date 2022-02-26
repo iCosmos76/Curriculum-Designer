@@ -15,6 +15,7 @@ using GongSolutions.Wpf.DragDrop;
 using System.Linq;
 using System.Diagnostics;
 using System.ComponentModel;
+using System.Collections;
 
 namespace Kernel_of_curriculum
 {
@@ -1048,23 +1049,43 @@ namespace Kernel_of_curriculum
 
         private void btnAddElem_Click(object sender,RoutedEventArgs e) {
 
-            var lbi = new ListBoxItem();
+            var win_discp = new Disciplines_editor();
+            IList get_list_disciplines;
+            List<Discipline_DataGrid> convert_discp;
 
-            var elem = new Tile();
+            win_discp.ShowDialog();
 
-            elem.TheoryRab.Value = 3;
-            elem.PromAttest.Value = 1;
-            elem.Kurs.Value = 1;
-            elem.Total.Value = elem.TheoryRab.Value + elem.PromAttest.Value + elem.Kurs.Value;
-            elem.SokrNameD.Content = "ПИС";
-            elem.SokrNameD.ToolTip = "Проектирование информационных систем";
+            if(win_discp.DialogResult == true) {
 
-            lbi.Content = elem;
-            lbi.BorderBrush = Brushes.Black;
-            lbi.BorderThickness = new Thickness(1,1,1,1);
-            lbi.Background = Brushes.YellowGreen;
-            lbi.HorizontalContentAlignment = HorizontalAlignment.Stretch;
-            lbBank.Items.Add(lbi);
+                get_list_disciplines = win_discp.list_of_elements();
+                convert_discp = new List<Discipline_DataGrid>();
+
+                ListBoxItem lbi;
+                Tile elem;             
+
+                for (int i = 0; i < get_list_disciplines.Count; i++) 
+                    convert_discp.Add((Discipline_DataGrid)get_list_disciplines[i]);
+                
+                for (int i = 0; i < convert_discp.Count; i++) {
+                    
+                    lbi = new ListBoxItem();
+                    elem = new Tile();
+
+                    elem.TheoryRab.Value = convert_discp[i].TheoryRab;
+                    elem.PromAttest.Value = convert_discp[i].PromAttest;
+                    elem.Kurs.Value = convert_discp[i].Kurs;
+                    elem.Total.Value = elem.TheoryRab.Value + elem.PromAttest.Value + elem.Kurs.Value;
+                    elem.SokrNameD.Content = convert_discp[i].SokrName;
+                    elem.SokrNameD.ToolTip = convert_discp[i].Name;
+
+                    lbi.Content = elem;
+                    lbi.BorderBrush = Brushes.Black;
+                    lbi.BorderThickness = new Thickness(1,1,1,1);
+                    lbi.Background = (SolidColorBrush)new BrushConverter().ConvertFromString(convert_discp[i].CvetK);                 
+                    lbi.HorizontalContentAlignment = HorizontalAlignment.Stretch;
+                    lbBank.Items.Add(lbi);
+                }
+            }
         }
 
         private void lbFrstSem_Initialized(object sender,EventArgs e) {

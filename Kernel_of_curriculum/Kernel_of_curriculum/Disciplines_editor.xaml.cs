@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace Kernel_of_curriculum
     /// <summary>
     /// Логика взаимодействия для Disciplines_editor.xaml
     /// </summary>
+    /// 
     public partial class Disciplines_editor : Window {
         
         public ObservableCollection<Discipline_DataGrid> disciplines = new ObservableCollection<Discipline_DataGrid>();
@@ -30,6 +32,7 @@ namespace Kernel_of_curriculum
         public bool flProm;
         public bool flKurs;
         public string NameKat;
+        public string CvetKat;
 
         private Discipline_DataGrid activeCellAtEdit_old { get; set; }
         private string name_old { get; set; }
@@ -45,7 +48,7 @@ namespace Kernel_of_curriculum
         private int promAttest_old { get; set; }
         private bool flgKurs_old { get; set; }
         private int kurs_old { get; set; }
-
+      
         public Disciplines_editor() {
             InitializeComponent();
 
@@ -62,7 +65,7 @@ namespace Kernel_of_curriculum
                     flKurs = false;
               
                 disciplines.Add(new Discipline_DataGrid(sqldisp[i].IdDisp, sqldisp[i].NameD, sqldisp[i].SokrNameD,
-                    sqldisp[i].SelBlok,sqldisp[i].NameK,sqldisp[i].IdK,sqldisp[i].TheoryRab,flProm,
+                    sqldisp[i].SelBlok,sqldisp[i].IdK, sqldisp[i].NameK,sqldisp[i].CvetK,sqldisp[i].TheoryRab,flProm,
                     sqldisp[i].PromAttest,flKurs,sqldisp[i].Kurs));
 
             }
@@ -84,11 +87,13 @@ namespace Kernel_of_curriculum
                         flKurs = false;
 
                     NameKat = "...";
+                    CvetKat = "#FFFFFF";
 
                     disciplines.Add(new Discipline_DataGrid(sqldispidknull[i].IdDisp,
                         sqldispidknull[i].NameD,sqldispidknull[i].SokrNameD,
-                            sqldispidknull[i].SelBlok,NameKat,sqldispidknull[i].IdK,sqldispidknull[i].TheoryRab,flProm,
-                            sqldispidknull[i].PromAttest,flKurs,sqldispidknull[i].Kurs));
+                            sqldispidknull[i].SelBlok,sqldispidknull[i].IdK, NameKat,CvetKat,
+                            sqldispidknull[i].TheoryRab,flProm, sqldispidknull[i].PromAttest,
+                            flKurs,sqldispidknull[i].Kurs));
                 }
             }       
 
@@ -113,12 +118,13 @@ namespace Kernel_of_curriculum
                 flKurs = false;
 
             NameKat = "...";
+            CvetKat = "#FFFFFF";
 
             disciplines.Add(new Discipline_DataGrid(sqllastdisp[0].IdDisp,
                 sqllastdisp[0].NameD,sqllastdisp[0].SokrNameD,
-                    sqllastdisp[0].SelBlok,NameKat,sqllastdisp[0].IdK,sqllastdisp[0].TheoryRab,flProm,
-                    sqllastdisp[0].PromAttest,flKurs,sqllastdisp[0].Kurs));
-
+                    sqllastdisp[0].SelBlok,sqllastdisp[0].IdK, NameKat,CvetKat,
+                    sqllastdisp[0].TheoryRab,flProm, sqllastdisp[0].PromAttest,
+                    flKurs,sqllastdisp[0].Kurs));
         }
 
         private void btnDelElement_Click(object sender,RoutedEventArgs e) {
@@ -161,8 +167,20 @@ namespace Kernel_of_curriculum
         }
 
         private void btnApplyChanges_Click(object sender,RoutedEventArgs e) {
+            var selected_items = dtGridElement.SelectedItems;
 
+            if (selected_items.Count > 0) {
+                DialogResult = true;
+            }
+            else
+                System.Windows.MessageBox.Show("Выберите элемент или элементы из списка!","Ошибка",
+                    MessageBoxButton.OK,MessageBoxImage.Error,MessageBoxResult.OK);
 
+        }
+
+        public IList list_of_elements() {
+            var selected_items = dtGridElement.SelectedItems;
+            return selected_items;
         }
 
         private void btnAddCategory_Click(object sender,RoutedEventArgs e) {
@@ -175,6 +193,7 @@ namespace Kernel_of_curriculum
             if(kt.DialogResult == true) {
                 idK_kategory_new = kt.SelIdK();
                 kategory_new = UpdKat.NameK = kt.SelKat();
+                UpdKat.CvetK = kt.SelCvetK();
 
                 if (idK_kategory_new != idK_kategory_old || idK_kategory_old == 0)
                     SqliteDataAccessDisp.UpdateIdK(UpdKat.IdDisp,idK_kategory_new);
@@ -277,9 +296,10 @@ namespace Kernel_of_curriculum
         public int IdDisp { get; set; }
         public string NameD { get; set; }
         public string SokrNameD { get; set; }
-        public string NameK { get; set; }
+        public int SelBlok { get; set; }
         public int IdK { get; set; }
-        public int SelBlok { get; set; } 
+        public string NameK { get; set; }
+        public string CvetK { get; set; }  
         public int TheoryRab { get; set; }
         public int FlagPromAttest { get; set; }
         public int PromAttest { get; set; }
@@ -288,15 +308,17 @@ namespace Kernel_of_curriculum
 
         public Discipline_Conn_Data_Base() { }
 
-        public Discipline_Conn_Data_Base(string nameD, string sokrNameD,
-            int selBlok, string nameK, int idK, int theoryRab, int flagPromAttest, 
+        public Discipline_Conn_Data_Base(int idDisp, string nameD, string sokrNameD,
+            int selBlok,int idK, string nameK, string cvetK, int theoryRab, int flagPromAttest, 
             int promAttest, int flagKurs, int kurs) {
 
+            IdDisp = idDisp;
             NameD = nameD;
             SokrNameD = sokrNameD;
             SelBlok = selBlok;
-            NameK = nameK;
             IdK = idK;
+            NameK = nameK;
+            CvetK = cvetK;
             TheoryRab = theoryRab;
             FlagPromAttest = flagPromAttest;
             PromAttest = promAttest;
@@ -310,8 +332,9 @@ namespace Kernel_of_curriculum
         private int idDisp { get; set; }
         private string name { get; set; }
         private string sokrName { get; set; }
-        private string nameK { get; set; }
         private int idK { get; set; }
+        private string nameK { get; set; }
+        private string cvetK { get; set; }
         private ObservableCollection<Blok> blok { get; set; } = new ObservableCollection<Blok>(){
                 new Blok("Дисциплины"),
                 new Blok("ГИА"),
@@ -346,6 +369,13 @@ namespace Kernel_of_curriculum
                 OnPropertyChanged("SokrName");
             }
         }
+        public int IdK {
+            get { return idK; }
+            set {
+                idK = value;
+                OnPropertyChanged("IdK");
+            }
+        }
         public string NameK {
             get { return nameK; }
             set {
@@ -353,13 +383,14 @@ namespace Kernel_of_curriculum
                 OnPropertyChanged("NameK");
             }
         }
-        public int IdK {
-            get { return idK; }
+        public string CvetK {
+            get { return cvetK; }
             set {
-                idK = value;
-                OnPropertyChanged("IdK");
+                cvetK = value;
+                OnPropertyChanged("CvetK");
             }
-        }  
+        }
+
         public ObservableCollection<Blok> Blok {
             get { return blok; }
             set {
@@ -411,22 +442,22 @@ namespace Kernel_of_curriculum
         }
 
         public Discipline_DataGrid(int idDisp, string name,string sokrName,
-            int selBlok,string nameK, int idK, int theoryRab,bool flagPromAttest,
+            int selBlok,int idK,string nameK, string cvetK, int theoryRab,bool flagPromAttest,
             int promAttest,bool flagKurs,int kurs) {
 
             IdDisp = idDisp;
             Name = name;
             SokrName = sokrName;
             SelBlok = selBlok;
-            NameK = nameK;
             IdK = idK;
+            NameK = nameK;
+            CvetK = cvetK;
             TheoryRab = theoryRab;
             FlagPromAttest = flagPromAttest;
             PromAttest = promAttest;
             FlagPromAttest = flagKurs;
             Kurs = kurs;
         }
-
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "") {
@@ -436,5 +467,18 @@ namespace Kernel_of_curriculum
 
         }
     }
+
+    // измененная кнопка с добавленным свойством цвета категории
+
+    public class CustomButton : Button {
+        public string ColorKategory {
+            get { return (string)GetValue(ColorKategoryProperty); }
+            set { SetValue(ColorKategoryProperty,value); }
+        }
+        public static readonly DependencyProperty
+        ColorKategoryProperty = DependencyProperty.Register("ColorKategory",
+            typeof(string),typeof(CustomButton),new PropertyMetadata(""));
+    }
+
 
 }

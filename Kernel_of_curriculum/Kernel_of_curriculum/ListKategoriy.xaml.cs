@@ -39,7 +39,7 @@ namespace Kernel_of_curriculum {
             // замена hex цвета типа string из БД на тип object.Color
             for (int i = 0; i < sqlkat.Count; i++) {
                 kategories.Add(new Kategory_with_Color(sqlkat[i].IdK,sqlkat[i].NameK,
-                    (Color)ColorConverter.ConvertFromString(sqlkat[i].Cvet)));
+                    (Color)ColorConverter.ConvertFromString(sqlkat[i].CvetK)));
             }
 
             // привязка категорий к датагриду
@@ -53,7 +53,7 @@ namespace Kernel_of_curriculum {
             if (e.Column.Header.ToString() == "Название категории")
                 nmk_old = activeCellAtEdit_old.NameK;
             if (e.Column.Header.ToString() == "Цвет")
-                cvt_old = activeCellAtEdit_old.Cvet.ToString();
+                cvt_old = activeCellAtEdit_old.CvetK.ToString();
 
         }
 
@@ -61,12 +61,12 @@ namespace Kernel_of_curriculum {
 
             var get_elem = (Kategory_with_Color)e.Row.Item;
 
-            if (get_elem.NameK != nmk_old && get_elem.Cvet.ToString() != cvt_old)
-                SqliteDataAccessKat.UpdateKatNameCvet(get_elem.IdK,get_elem.NameK,get_elem.Cvet.ToString());
+            if (get_elem.NameK != nmk_old && get_elem.CvetK.ToString() != cvt_old)
+                SqliteDataAccessKat.UpdateKatNameCvet(get_elem.IdK,get_elem.NameK,get_elem.CvetK.ToString());
             if (get_elem.NameK != nmk_old)
                 SqliteDataAccessKat.UpdateKatNameK(get_elem.IdK,get_elem.NameK);
-            if (get_elem.Cvet.ToString() != cvt_old)
-                SqliteDataAccessKat.UpdateKatCvet(get_elem.IdK,get_elem.Cvet.ToString());
+            if (get_elem.CvetK.ToString() != cvt_old)
+                SqliteDataAccessKat.UpdateKatCvet(get_elem.IdK,get_elem.CvetK.ToString());
         }
 
         private void btnAddKat_Click(object sender,RoutedEventArgs e) {
@@ -77,7 +77,7 @@ namespace Kernel_of_curriculum {
             sqlkat = SqliteDataAccessKat.LoadKat();
 
             kategories.Add(new Kategory_with_Color(sqlkat[sqlkat.Count - 1].IdK,sqlkat[sqlkat.Count - 1].NameK,
-                (Color)ColorConverter.ConvertFromString(sqlkat[sqlkat.Count - 1].Cvet)));
+                (Color)ColorConverter.ConvertFromString(sqlkat[sqlkat.Count - 1].CvetK)));
 
         }
 
@@ -121,9 +121,8 @@ namespace Kernel_of_curriculum {
 
         private void btnSelectKat_Click(object sender,RoutedEventArgs e) {
 
-            if (dtKategories.SelectedItem != null) {
-                DialogResult = true;
-            }
+            if (dtKategories.SelectedItem != null) 
+                DialogResult = true;         
             else
                 MessageBox.Show("Выберите категорию!", "Ошибка", 
                     MessageBoxButton.OK,MessageBoxImage.Error,MessageBoxResult.OK);           
@@ -138,6 +137,11 @@ namespace Kernel_of_curriculum {
             return sel_kat.IdK;
         }
 
+        public string SelCvetK() {
+            var sel_kat = (Kategory_with_Color)dtKategories.SelectedItem;
+            return sel_kat.CvetK.ToString();
+        }
+
         private void dtKategories_CellEditEnding(object sender,DataGridCellEditEndingEventArgs e) {
             if (Keyboard.IsKeyDown(Key.Escape) && e.Column.Header.ToString() == "Название категории") {
                 var nmk = e.EditingElement as TextBox;
@@ -150,13 +154,13 @@ namespace Kernel_of_curriculum {
 
         public int IdK { get; set; }
         public string NameK { get; set; }
-        public string Cvet { get; set; }
+        public string CvetK { get; set; }
 
         public Kategory_Conn_Date_Base() { }
 
-        public Kategory_Conn_Date_Base(string nameK,string cvet) {
+        public Kategory_Conn_Date_Base(string nameK,string cvetK) {
             NameK = nameK;
-            Cvet = cvet;
+            CvetK = cvetK;
         }
     }
 
@@ -164,7 +168,7 @@ namespace Kernel_of_curriculum {
 
         private int idK { get; set; }
         private string nameK { get; set; }
-        private Color cvet { get; set; }
+        private Color cvetK { get; set; }
 
         public int IdK {
             get { return idK; }
@@ -181,22 +185,22 @@ namespace Kernel_of_curriculum {
             }
         
         }
-        public Color Cvet {
-            get { return cvet; }
+        public Color CvetK {
+            get { return cvetK; }
             set {
-                cvet = value;
+                cvetK = value;
                 OnPropertyChanged("Cvet");
             }
         }
 
         public Kategory_with_Color() {
-            Cvet = Colors.GreenYellow;
+            CvetK = Colors.GreenYellow;
             NameK = "...";
         }
 
-        public Kategory_with_Color(int idK, string nameK, Color cvet) {
+        public Kategory_with_Color(int idK, string nameK, Color cvetK) {
             IdK = idK;
-            Cvet = cvet;
+            CvetK = cvetK;
             NameK = nameK;
         }
 

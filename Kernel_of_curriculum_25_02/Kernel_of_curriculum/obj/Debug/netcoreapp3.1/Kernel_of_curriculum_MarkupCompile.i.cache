@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\
+d:\VKR\Kernel_of_curriculum_25_02\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\
 Kernel_of_curriculum
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\App.xaml
+d:\VKR\Kernel_of_curriculum_25_02\Kernel_of_curriculum\App.xaml
 61159549332
 
 111541607774
 204-2060633215
 Create_project.xaml;Disciplines_editor.xaml;Initial_window.xaml;ListKategoriy.xaml;Main_window.xaml;Tile.xaml;
 
-True
+False
 

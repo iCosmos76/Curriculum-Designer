@@ -64,3 +64,4 @@ D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\bin\Debug\netcoreapp3.1\GongSol
 D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Tile.g.cs
 D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Tile.baml
 D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+d:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Kernel_of_curriculum.csproj.AssemblyReference.cache
