@@ -3,21 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Xceed.Wpf.Toolkit;
+using System.Windows.Threading;
 
-namespace Kernel_of_curriculum
-{
+namespace Kernel_of_curriculum {
     /// <summary>
     /// Логика взаимодействия для Disciplines_editor.xaml
     /// </summary>
@@ -48,7 +40,8 @@ namespace Kernel_of_curriculum
         private int promAttest_old { get; set; }
         private bool flgKurs_old { get; set; }
         private int kurs_old { get; set; }
-      
+
+
         public Disciplines_editor() {
             InitializeComponent();
 
@@ -125,6 +118,35 @@ namespace Kernel_of_curriculum
                     sqllastdisp[0].SelBlok,sqllastdisp[0].IdK, NameKat,CvetKat,
                     sqllastdisp[0].TheoryRab,flProm, sqllastdisp[0].PromAttest,
                     flKurs,sqllastdisp[0].Kurs));
+
+            Dispatcher.BeginInvoke(DispatcherPriority.Input,new Action(() =>
+            {
+                SelectRowByIndex(dtGridElement,dtGridElement.Items.Count - 1);
+            }));
+
+        }
+
+        // фокус на последнюю строку при добавлении элемента
+        private void SelectRowByIndex(DataGrid dtGridElement,int rowIndex) {
+            if (!dtGridElement.SelectionUnit.Equals(DataGridSelectionUnit.FullRow))
+                throw new ArgumentException("The SelectionUnit of the DataGrid must be set to FullRow.");
+
+            if (rowIndex < 0 || rowIndex > (dtGridElement.Items.Count - 1))
+                throw new ArgumentException(string.Format("{0} is an invalid row index.",rowIndex));
+
+            dtGridElement.SelectedItems.Clear();
+            /* set the SelectedItem property */
+            object item = dtGridElement.Items[rowIndex]; // = Product X
+            dtGridElement.SelectedItem = item;
+
+            DataGridRow row = dtGridElement.ItemContainerGenerator.ContainerFromIndex(rowIndex) as DataGridRow;
+            if (row == null) {
+                /* bring the data item (Product object) into view
+                 * in case it has been virtualized away */
+                dtGridElement.ScrollIntoView(item);
+                row = dtGridElement.ItemContainerGenerator.ContainerFromIndex(rowIndex) as DataGridRow;
+            }
+            //TODO: Retrieve and focus a DataGridCell object
         }
 
         private void btnDelElement_Click(object sender,RoutedEventArgs e) {
@@ -198,7 +220,8 @@ namespace Kernel_of_curriculum
                 if (idK_kategory_new != idK_kategory_old || idK_kategory_old == 0)
                     SqliteDataAccessDisp.UpdateIdK(UpdKat.IdDisp,idK_kategory_new);
 
-            }              
+            }
+       
         }
 
         private void btnAddCategory_PreviewMouseDown(object sender,MouseButtonEventArgs e) {
@@ -214,17 +237,17 @@ namespace Kernel_of_curriculum
         private void dtGridElement_BeginningEdit(object sender,DataGridBeginningEditEventArgs e) {
             activeCellAtEdit_old = (Discipline_DataGrid)dtGridElement.SelectedItem;
             
-            if (e.Column.Header.ToString() == "Название дисциплины")
+            if (e.Column.Header.ToString() == "Название дисциплины   ")
                 name_old = activeCellAtEdit_old.Name;
-            if (e.Column.Header.ToString() == "Сокр. назв. дисциплины")
+            if (e.Column.Header.ToString() == "Сокр. назв. дисциплины   ")
                 sokrName_old = activeCellAtEdit_old.SokrName;
-            if (e.Column.Header.ToString() == "Теор. обучение")
+            if (e.Column.Header.ToString() == "Теор. обучение (з.е.)   ")
                 theoryRab_old = activeCellAtEdit_old.TheoryRab;
-            if (e.Column.Header.ToString() == "Промеж. аттестация") {
+            if (e.Column.Header.ToString() == "Промеж. аттестация (з.е.)   ") {
                 flgPromAttest_old = activeCellAtEdit_old.FlagPromAttest;
                 promAttest_old = activeCellAtEdit_old.PromAttest;
             }
-            if (e.Column.Header.ToString() == "Курс. работа/проект") {
+            if (e.Column.Header.ToString() == "Курс. работа/проект (з.е.)   ") {
                 flgKurs_old = activeCellAtEdit_old.FlagKurs;
                 kurs_old = activeCellAtEdit_old.Kurs;
             }
@@ -273,15 +296,16 @@ namespace Kernel_of_curriculum
         }
 
         private void dtGridElement_CellEditEnding(object sender,DataGridCellEditEndingEventArgs e) {
-            if (Keyboard.IsKeyDown(Key.Escape) && e.Column.Header.ToString() == "Название дисциплины") {
+            if (Keyboard.IsKeyDown(Key.Escape) && e.Column.Header.ToString() == "Название дисциплины   ") {
                 var nmdisp = e.EditingElement as TextBox;
                 nmdisp.Text = name_old;
             }
-            if (Keyboard.IsKeyDown(Key.Escape) && e.Column.Header.ToString() == "Сокр. назв. дисциплины") {
+            if (Keyboard.IsKeyDown(Key.Escape) && e.Column.Header.ToString() == "Сокр. назв. дисциплины   ") {
                 var nmdisp = e.EditingElement as TextBox;
                 nmdisp.Text = sokrName_old;
             }
         }
+
     }
 
     public class Blok {
@@ -469,7 +493,6 @@ namespace Kernel_of_curriculum
     }
 
     // измененная кнопка с добавленным свойством цвета категории
-
     public class CustomButton : Button {
         public string ColorKategory {
             get { return (string)GetValue(ColorKategoryProperty); }
@@ -479,6 +502,5 @@ namespace Kernel_of_curriculum
         ColorKategoryProperty = DependencyProperty.Register("ColorKategory",
             typeof(string),typeof(CustomButton),new PropertyMetadata(""));
     }
-
 
 }

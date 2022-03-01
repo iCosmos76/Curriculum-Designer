@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DDQxaTgk+3kWnvZUPquAyQGvRcf12voni0Z74YFMBMwKshOFvCGjWCbIu1TnNWlLLDpg69CBCcyGyM2TrQgQhw==",
+  "dgSpecHash": "8NkX+fG3sx3tEOz8+CSDKHoeG/gKJr8CnG7OaThvLH2GQ9dSF4hG9V2jwm+YC/EMYAZwJBQ+KBFxyGhX/zwV2g==",
   "success": true,
-  "projectFilePath": "D:\\VKR\\Kernel_of_curriculum\\Kernel_of_curriculum\\Kernel_of_curriculum.csproj",
+  "projectFilePath": "d:\\VKR\\Kernel_of_curriculum_24_02\\Kernel_of_curriculum\\Kernel_of_curriculum.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\belou\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\belou\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

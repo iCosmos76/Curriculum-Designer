@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Configuration;
-using System.Collections.ObjectModel;
 using System.Data;
 using System.Data.SQLite;
 using Dapper;

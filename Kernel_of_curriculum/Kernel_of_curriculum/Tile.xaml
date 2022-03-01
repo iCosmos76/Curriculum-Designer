@@ -8,61 +8,84 @@
              xmlns:local="clr-namespace:Kernel_of_curriculum"
              mc:Ignorable="d" >
 
-        <Grid Height="60">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="2"/>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-            </Grid.RowDefinitions>
-            <xctk:IntegerUpDown   
+    <Grid Height="50">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="21*"/>
+        </Grid.RowDefinitions>
+        <xctk:IntegerUpDown   
                 x:Name="TheoryRab"
-                Grid.Column="0" 
+                Grid.Row="2"                
                 TextAlignment="Center" 
-                AllowTextInput="False"
-                ToolTip="Теоретическое обучение (з.е.)"/>
-            <xctk:IntegerUpDown 
+                AllowTextInput="False"            
+                ToolTip="Теоретическое обучение (з.е.)"
+                />
+        <xctk:IntegerUpDown 
                 x:Name="PromAttest"
-                Grid.Column="0" 
-                Grid.Row="1" 
-                TextAlignment="Center"
+                Grid.Column="1" 
+                Grid.Row="2"               
+                TextAlignment="Center"                
                 AllowTextInput="False"
-                ToolTip="Промежуточная аттестация (з.е.)" Height="20" Grid.ColumnSpan="2" Margin="0,0,2,0" VerticalAlignment="Top"/>
-            <xctk:IntegerUpDown 
+                ToolTip="Промежуточная аттестация (з.е.)"/>
+        <xctk:IntegerUpDown 
                 x:Name="Kurs"
-                Grid.Column="0" 
-                Grid.Row="2" TextAlignment="Center"
+                Grid.Column="2"
+                Grid.Row="2"             
+                TextAlignment="Center"      
                 AllowTextInput="False"
                 ToolTip="Курсовая работа/проект (з.е.)"/>
-            <xctk:IntegerUpDown               
+        <!--<xctk:IntegerUpDown               
                 x:Name="Total"              
-                Grid.Column="3" 
+                Grid.Column="2" 
                 Grid.Row="2" 
                 Grid.ColumnSpan="2" 
                 TextAlignment="Center"           
                 AllowTextInput="False"
-                ToolTip="Общее количество з.е."/>
-
-            <Label 
-                x:Name="SokrNameD"
-                MinWidth="38" 
-                Content="..."
-                HorizontalContentAlignment="Center"
-                VerticalContentAlignment="Center"
-                Grid.Column="2"
-                Grid.RowSpan="3"/>
-            <Button 
+                ToolTip="Общее количество з.е."/>-->
+        <Border Height="20" 
+                Width="20" 
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left" 
+                BorderBrush="#FFABADB3" 
+                BorderThickness="1,1,1,1"
+                ToolTip="Общее количество з.е." 
+                >
+            <TextBlock
+                x:Name="Total"           
+                Text="0"
+                Background="White"
+                IsEnabled="False"
+                Height="18" 
+                Width="18"
+                TextAlignment="Center"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Grid.Column="0"
+                />
+        </Border>
+        <TextBlock 
+                x:Name="SokrNameD"           
+                Text="..."
+                TextAlignment="Center"
+                VerticalAlignment="Center"
+                Grid.Column="1"
+                Grid.RowSpan="2"/>
+        <Button 
                 x:Name="btnThrowOfTile"
-                Grid.Column="4" 
-                FontSize="9"  
-                Content="X"/>
+                Grid.Column="2"       
+                FontSize="10"  
+                Content="X"
+                Height="20" 
+                Width="20"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"/>
 
-        </Grid>
-    
+    </Grid>
+
 </UserControl>

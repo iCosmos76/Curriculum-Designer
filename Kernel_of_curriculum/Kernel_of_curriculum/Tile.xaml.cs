@@ -24,31 +24,6 @@ namespace Kernel_of_curriculum {
 
         public Tile() {
             InitializeComponent();
-            Total.Value = 3;
         }
-
-
-
-        //public event RoutedEventHandler TheoryRab;
-        //public event RoutedEventHandler FlagPromAttest;
-        //public event RoutedEventHandler PromAttest;
-        //public event RoutedEventHandler FlagKurs;
-
-
-
-        //public
-
-        //public string NameD { get; set; }
-        //public string SokrNameD { get; set; }
-        //public string NameK { get; set; }
-        //public int IdK { get; set; }
-        //public int SelBlok { get; set; }
-        //public int TheoryRab { get; set; }
-        //public int FlagPromAttest { get; set; }
-        //public int PromAttest { get; set; }
-        //public int FlagKurs { get; set; }
-        //public int Kurs { get; set; }
-
-
     }
 }

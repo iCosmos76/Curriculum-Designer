@@ -1,24 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Collections.ObjectModel;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using GongSolutions.Wpf.DragDrop;
 using System.Linq;
-using System.Diagnostics;
-using System.ComponentModel;
 using System.Collections;
+using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Kernel_of_curriculum
-{
+namespace Kernel_of_curriculum {
     /// <summary>
     /// Логика взаимодействия для Main_window.xaml
     /// </summary>
@@ -51,8 +41,8 @@ namespace Kernel_of_curriculum
 
 
             for (int i = 0; i < tilesScndSem.Count; i++) {
-                sumScndSem += (int)tilesScndSem[i].Total.Value;
-                tilesScndSem[i].Total.ValueChanged += Total_ValueChanged_Scnd_Sem;
+                sumScndSem += Convert.ToInt32(tilesScndSem[i].Total.Text);
+                //tilesScndSem[i].Total.ValueChanged += Total_ValueChanged_Scnd_Sem;
                 tilesScndSem[i].btnThrowOfTile.Click += BtnThrowOfTile_Click_ScndSem;
             }
 
@@ -70,8 +60,8 @@ namespace Kernel_of_curriculum
 
 
             for (int i = 0; i < tilesThrdSem.Count; i++) {
-                sumThrdSem += (int)tilesThrdSem[i].Total.Value;
-                tilesThrdSem[i].Total.ValueChanged += Total_ValueChanged_Thrd_Sem;
+                sumThrdSem += Convert.ToInt32(tilesThrdSem[i].Total.Text);
+                //tilesThrdSem[i].Total.ValueChanged += Total_ValueChanged_Thrd_Sem;
                 tilesThrdSem[i].btnThrowOfTile.Click += BtnThrowOfTile_Click_ThrdSem;
             }
 
@@ -89,8 +79,8 @@ namespace Kernel_of_curriculum
 
 
             for (int i = 0; i < tilesFrthSem.Count; i++) {
-                sumFrthSem += (int)tilesFrthSem[i].Total.Value;
-                tilesFrthSem[i].Total.ValueChanged += Total_ValueChanged_Frth_Sem;
+                sumFrthSem += Convert.ToInt32(tilesFrthSem[i].Total.Text);
+                //tilesFrthSem[i].Total.ValueChanged += Total_ValueChanged_Frth_Sem;
                 tilesFrthSem[i].btnThrowOfTile.Click += BtnThrowOfTile_Click_FrthSem;
             }
 
@@ -108,8 +98,8 @@ namespace Kernel_of_curriculum
 
 
             for (int i = 0; i < tilesFfthSem.Count; i++) {
-                sumFfthSem += (int)tilesFfthSem[i].Total.Value;
-                tilesFfthSem[i].Total.ValueChanged += Total_ValueChanged_Ffth_Sem;
+                sumFfthSem += Convert.ToInt32(tilesFfthSem[i].Total.Text);
+                //tilesFfthSem[i].Total.ValueChanged += Total_ValueChanged_Ffth_Sem;
                 tilesFfthSem[i].btnThrowOfTile.Click += BtnThrowOfTile_Click_FfthSem;
             }
 
@@ -127,8 +117,8 @@ namespace Kernel_of_curriculum
 
 
             for (int i = 0; i < tilesSxthSem.Count; i++) {
-                sumSxthSem += (int)tilesSxthSem[i].Total.Value;
-                tilesSxthSem[i].Total.ValueChanged += Total_ValueChanged_Sxth_Sem;
+                sumSxthSem += Convert.ToInt32(tilesSxthSem[i].Total.Text);
+                //tilesSxthSem[i].Total.ValueChanged += Total_ValueChanged_Sxth_Sem;
                 tilesSxthSem[i].btnThrowOfTile.Click += BtnThrowOfTile_Click_SxthSem;
             }
 
@@ -146,8 +136,8 @@ namespace Kernel_of_curriculum
 
 
             for (int i = 0; i < tilesSvnthSem.Count; i++) {
-                sumSvnthSem += (int)tilesSvnthSem[i].Total.Value;
-                tilesSvnthSem[i].Total.ValueChanged += Total_ValueChanged_Svnth_Sem;
+                sumSvnthSem += Convert.ToInt32(tilesSvnthSem[i].Total.Text);
+                //tilesSvnthSem[i].Total.ValueChanged += Total_ValueChanged_Svnth_Sem;
                 tilesSvnthSem[i].btnThrowOfTile.Click += BtnThrowOfTile_Click_SvnthSem;
             }
 
@@ -165,8 +155,8 @@ namespace Kernel_of_curriculum
 
 
             for (int i = 0; i < tilesEgthSem.Count; i++) {
-                sumEgthSem += (int)tilesEgthSem[i].Total.Value;
-                tilesEgthSem[i].Total.ValueChanged += Total_ValueChanged_Egth_Sem;
+                sumEgthSem += Convert.ToInt32(tilesEgthSem[i].Total.Text);
+                //tilesEgthSem[i].Total.ValueChanged += Total_ValueChanged_Egth_Sem;
                 tilesEgthSem[i].btnThrowOfTile.Click += BtnThrowOfTile_Click_EgthSem;
             }
 
@@ -622,9 +612,9 @@ namespace Kernel_of_curriculum
 
 
                 for (int i = 0; i < tiles.Count; i++) {
-                    tiles[i].Total.ValueChanged += Total_ValueChanged_First_Sem;
+                    //tiles[i].Total.ValueChanged += Total_ValueChanged_First_Sem;
                     tiles[i].btnThrowOfTile.Click += BtnThrowOfTile_Click_FrstSem;
-                    sumFrstSem += (int)tiles[i].Total.Value;                  
+                    sumFrstSem += Convert.ToInt32(tiles[i].Total.Text);                  
                 }
 
                 labelfrstSem.Content = sumFrstSem;
@@ -648,9 +638,9 @@ namespace Kernel_of_curriculum
 
 
                 for (int i = 0; i < tiles.Count; i++) {
-                    tiles[i].Total.ValueChanged -= Total_ValueChanged_First_Sem;
+                    //tiles[i].Total.ValueChanged -= Total_ValueChanged_First_Sem;
                     tiles[i].btnThrowOfTile.Click -= BtnThrowOfTile_Click_FrstSem;
-                    sumFrstSem -= (int)tiles[i].Total.Value;                                
+                    sumFrstSem -= Convert.ToInt32(tiles[i].Total.Text);                                
                 }
 
                 labelfrstSem.Content = sumFrstSem;
@@ -677,9 +667,9 @@ namespace Kernel_of_curriculum
 
 
                 for (int i = 0; i < tiles.Count; i++) {
-                    tiles[i].Total.ValueChanged += Total_ValueChanged_Scnd_Sem;
+                    //tiles[i].Total.ValueChanged += Total_ValueChanged_Scnd_Sem;
                     tiles[i].btnThrowOfTile.Click += BtnThrowOfTile_Click_ScndSem;
-                    sumScndSem += (int)tiles[i].Total.Value;
+                    sumScndSem += Convert.ToInt32(tiles[i].Total.Text);
                                   
                 }
 
@@ -703,9 +693,9 @@ namespace Kernel_of_curriculum
 
 
                 for (int i = 0; i < tiles.Count; i++) {
-                    tiles[i].Total.ValueChanged -= Total_ValueChanged_Scnd_Sem;
+                    //tiles[i].Total.ValueChanged -= Total_ValueChanged_Scnd_Sem;
                     tiles[i].btnThrowOfTile.Click -= BtnThrowOfTile_Click_ScndSem;
-                    sumScndSem -= (int)tiles[i].Total.Value;                  
+                    sumScndSem -= Convert.ToInt32(tiles[i].Total.Text);                  
                 }
 
                 labelscndSem.Content = sumScndSem;
@@ -732,9 +722,9 @@ namespace Kernel_of_curriculum
 
 
                 for (int i = 0; i < tiles.Count; i++) {
-                    tiles[i].Total.ValueChanged += Total_ValueChanged_Thrd_Sem;
+                    //tiles[i].Total.ValueChanged += Total_ValueChanged_Thrd_Sem;
                     tiles[i].btnThrowOfTile.Click += BtnThrowOfTile_Click_ThrdSem;
-                    sumThrdSem += (int)tiles[i].Total.Value;
+                    sumThrdSem += Convert.ToInt32(tiles[i].Total.Text);
 
                 }
 
@@ -758,9 +748,9 @@ namespace Kernel_of_curriculum
 
 
                 for (int i = 0; i < tiles.Count; i++) {
-                    tiles[i].Total.ValueChanged -= Total_ValueChanged_Thrd_Sem;
+                    //tiles[i].Total.ValueChanged -= Total_ValueChanged_Thrd_Sem;
                     tiles[i].btnThrowOfTile.Click -= BtnThrowOfTile_Click_ThrdSem;
-                    sumThrdSem -= (int)tiles[i].Total.Value;
+                    sumThrdSem -= Convert.ToInt32(tiles[i].Total.Text);
                 }
 
                 labelthrdSem.Content = sumThrdSem;
@@ -787,9 +777,9 @@ namespace Kernel_of_curriculum
 
 
                 for (int i = 0; i < tiles.Count; i++) {
-                    tiles[i].Total.ValueChanged += Total_ValueChanged_Frth_Sem;
+                    //tiles[i].Total.ValueChanged += Total_ValueChanged_Frth_Sem;
                     tiles[i].btnThrowOfTile.Click += BtnThrowOfTile_Click_FrthSem;
-                    sumFrthSem += (int)tiles[i].Total.Value;
+                    sumFrthSem += Convert.ToInt32(tiles[i].Total.Text);
 
                 }
 
@@ -813,9 +803,9 @@ namespace Kernel_of_curriculum
 
 
                 for (int i = 0; i < tiles.Count; i++) {
-                    tiles[i].Total.ValueChanged -= Total_ValueChanged_Frth_Sem;
+                    //tiles[i].Total.ValueChanged -= Total_ValueChanged_Frth_Sem;
                     tiles[i].btnThrowOfTile.Click -= BtnThrowOfTile_Click_FrthSem;
-                    sumFrthSem -= (int)tiles[i].Total.Value;
+                    sumFrthSem -= Convert.ToInt32(tiles[i].Total.Text);
                 }
 
                 labelfrthSem.Content = sumFrthSem;
@@ -842,9 +832,9 @@ namespace Kernel_of_curriculum
 
 
                 for (int i = 0; i < tiles.Count; i++) {
-                    tiles[i].Total.ValueChanged += Total_ValueChanged_Ffth_Sem;
+                    //tiles[i].Total.ValueChanged += Total_ValueChanged_Ffth_Sem;
                     tiles[i].btnThrowOfTile.Click += BtnThrowOfTile_Click_FfthSem;
-                    sumFfthSem += (int)tiles[i].Total.Value;
+                    sumFfthSem += Convert.ToInt32(tiles[i].Total.Text);
 
                 }
 
@@ -868,9 +858,9 @@ namespace Kernel_of_curriculum
 
 
                 for (int i = 0; i < tiles.Count; i++) {
-                    tiles[i].Total.ValueChanged -= Total_ValueChanged_Ffth_Sem;
+                    //tiles[i].Total.ValueChanged -= Total_ValueChanged_Ffth_Sem;
                     tiles[i].btnThrowOfTile.Click -= BtnThrowOfTile_Click_FfthSem;
-                    sumFfthSem -= (int)tiles[i].Total.Value;
+                    sumFfthSem -= Convert.ToInt32(tiles[i].Total.Text);
                 }
 
                 labelffthSem.Content = sumFfthSem;
@@ -897,9 +887,9 @@ namespace Kernel_of_curriculum
 
 
                 for (int i = 0; i < tiles.Count; i++) {
-                    tiles[i].Total.ValueChanged += Total_ValueChanged_Sxth_Sem;
+                    //tiles[i].Total.ValueChanged += Total_ValueChanged_Sxth_Sem;
                     tiles[i].btnThrowOfTile.Click += BtnThrowOfTile_Click_SxthSem;
-                    sumSxthSem += (int)tiles[i].Total.Value;
+                    sumSxthSem += Convert.ToInt32(tiles[i].Total.Text);
 
                 }
 
@@ -923,9 +913,9 @@ namespace Kernel_of_curriculum
 
 
                 for (int i = 0; i < tiles.Count; i++) {
-                    tiles[i].Total.ValueChanged -= Total_ValueChanged_Sxth_Sem;
+                    //tiles[i].Total.ValueChanged -= Total_ValueChanged_Sxth_Sem;
                     tiles[i].btnThrowOfTile.Click -= BtnThrowOfTile_Click_SxthSem;
-                    sumSxthSem -= (int)tiles[i].Total.Value;
+                    sumSxthSem -= Convert.ToInt32(tiles[i].Total.Text);
                 }
 
                 labelsxthSem.Content = sumSxthSem;
@@ -952,9 +942,9 @@ namespace Kernel_of_curriculum
 
 
                 for (int i = 0; i < tiles.Count; i++) {
-                    tiles[i].Total.ValueChanged += Total_ValueChanged_Svnth_Sem;
+                    //tiles[i].Total.ValueChanged += Total_ValueChanged_Svnth_Sem;
                     tiles[i].btnThrowOfTile.Click += BtnThrowOfTile_Click_SvnthSem;
-                    sumSvnthSem += (int)tiles[i].Total.Value;
+                    sumSvnthSem += Convert.ToInt32(tiles[i].Total.Text);
 
                 }
 
@@ -978,9 +968,9 @@ namespace Kernel_of_curriculum
 
 
                 for (int i = 0; i < tiles.Count; i++) {
-                    tiles[i].Total.ValueChanged -= Total_ValueChanged_Svnth_Sem;
+                    //tiles[i].Total.ValueChanged -= Total_ValueChanged_Svnth_Sem;
                     tiles[i].btnThrowOfTile.Click -= BtnThrowOfTile_Click_SvnthSem;
-                    sumSvnthSem -= (int)tiles[i].Total.Value;
+                    sumSvnthSem -= Convert.ToInt32(tiles[i].Total.Text);
                 }
 
                 labelsvnthSem.Content = sumSvnthSem;
@@ -1007,9 +997,9 @@ namespace Kernel_of_curriculum
 
 
                 for (int i = 0; i < tiles.Count; i++) {
-                    tiles[i].Total.ValueChanged += Total_ValueChanged_Egth_Sem;
+                    //tiles[i].Total.ValueChanged += Total_ValueChanged_Egth_Sem;
                     tiles[i].btnThrowOfTile.Click += BtnThrowOfTile_Click_EgthSem;
-                    sumEgthSem += (int)tiles[i].Total.Value;
+                    sumEgthSem += Convert.ToInt32(tiles[i].Total.Text);
 
                 }
 
@@ -1033,9 +1023,9 @@ namespace Kernel_of_curriculum
 
 
                 for (int i = 0; i < tiles.Count; i++) {
-                    tiles[i].Total.ValueChanged -= Total_ValueChanged_Egth_Sem;
+                    //tiles[i].Total.ValueChanged -= Total_ValueChanged_Egth_Sem;
                     tiles[i].btnThrowOfTile.Click -= BtnThrowOfTile_Click_EgthSem;
-                    sumEgthSem -= (int)tiles[i].Total.Value;
+                    sumEgthSem -= Convert.ToInt32(tiles[i].Total.Text);
                 }
 
                 labelegthSem.Content = sumEgthSem;
@@ -1074,8 +1064,8 @@ namespace Kernel_of_curriculum
                     elem.TheoryRab.Value = convert_discp[i].TheoryRab;
                     elem.PromAttest.Value = convert_discp[i].PromAttest;
                     elem.Kurs.Value = convert_discp[i].Kurs;
-                    elem.Total.Value = elem.TheoryRab.Value + elem.PromAttest.Value + elem.Kurs.Value;
-                    elem.SokrNameD.Content = convert_discp[i].SokrName;
+                    elem.Total.Text = (elem.TheoryRab.Value + elem.PromAttest.Value + elem.Kurs.Value).ToString();
+                    elem.SokrNameD.Text = convert_discp[i].SokrName;
                     elem.SokrNameD.ToolTip = convert_discp[i].Name;
 
                     lbi.Content = elem;
@@ -1102,14 +1092,13 @@ namespace Kernel_of_curriculum
 
 
             for (int i = 0; i < tilesFrstSem.Count; i++) {
-                sumFrstSem += (int)tilesFrstSem[i].Total.Value;
-                tilesFrstSem[i].Total.ValueChanged += Total_ValueChanged_First_Sem;
+                sumFrstSem += Convert.ToInt32(tilesFrstSem[i].Total.Text);
+                //tilesFrstSem[i].Total.ValueChanged += Total_ValueChanged_First_Sem;
                 tilesFrstSem[i].btnThrowOfTile.Click += BtnThrowOfTile_Click_FrstSem;
             }
 
             labelfrstSem.Content = sumFrstSem;
         }
-
 
         private void lbBank_Initialized(object sender,EventArgs e) {
 
