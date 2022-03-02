@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="Kernel_of_curriculum.Tile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+
+             xmlns:local="clr-namespace:Kernel_of_curriculum"
+             mc:Ignorable="d" >
+
+    <Grid Height="50">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="21*"/>
+        </Grid.RowDefinitions>
+        <xctk:IntegerUpDown   
+                x:Name="TheoryRab"
+                Grid.Row="2"                
+                TextAlignment="Center" 
+                AllowTextInput="False"            
+                ToolTip="Теоретическое обучение (з.е.)" ValueChanged="TheoryRab_ValueChanged"
+                />
+        <xctk:IntegerUpDown 
+                x:Name="PromAttest"
+                Grid.Column="1" 
+                Grid.Row="2"               
+                TextAlignment="Center"                
+                AllowTextInput="False"
+                ToolTip="Промежуточная аттестация (з.е.)" ValueChanged="PromAttest_ValueChanged"/>
+        <xctk:IntegerUpDown 
+                x:Name="Kurs"
+                Grid.Column="2"
+                Grid.Row="2"             
+                TextAlignment="Center"      
+                AllowTextInput="False"
+                ToolTip="Курсовая работа/проект (з.е.)" ValueChanged="Kurs_ValueChanged"/>
+        <Border Height="20" 
+                Width="20" 
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left" 
+                BorderBrush="#FFABADB3" 
+                BorderThickness="1,1,1,1"
+                ToolTip="Общее количество з.е." 
+                >
+            <TextBlock
+                x:Name="Total"           
+                Text="0"
+                Background="White"
+                IsEnabled="False"
+                Height="18" 
+                Width="18"
+                TextAlignment="Center"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Grid.Column="0"
+                />
+        </Border>
+        <TextBlock 
+                x:Name="SokrNameD"           
+                Text="..."
+                TextAlignment="Center"
+                VerticalAlignment="Center"
+                Grid.Column="1"
+                Grid.RowSpan="2"/>
+        <Button 
+                x:Name="btnThrowOfTile"
+                Grid.Column="2"       
+                FontSize="10"  
+                Content="X"
+                Height="20" 
+                Width="20"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"/>
+
+    </Grid>
+
+</UserControl>
