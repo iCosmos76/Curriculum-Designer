@@ -111,7 +111,7 @@ namespace Kernel_of_curriculum {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Kernel_of_curriculum;component/disciplines_editor.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Kernel_of_curriculum;V1.0.0.0;component/disciplines_editor.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Disciplines_editor.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
