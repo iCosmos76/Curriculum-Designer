@@ -196,9 +196,9 @@ namespace Kernel_of_curriculum {
         private void dtGridElement_BeginningEdit(object sender,DataGridBeginningEditEventArgs e) {
             activeCellAtEdit_old = (Discipline_DataGrid)dtGridElement.SelectedItem;
             
-            if (e.Column.Header.ToString() == "Название дисциплины   ")
+            if (e.Column.Header.ToString() == "Название элемента   ")
                 name_old = activeCellAtEdit_old.Name;
-            if (e.Column.Header.ToString() == "Сокр. назв. дисциплины   ")
+            if (e.Column.Header.ToString() == "Сокр. назв. элемента   ")
                 sokrName_old = activeCellAtEdit_old.SokrName;
             if (e.Column.Header.ToString() == "Теор. обучение (з.е.)   ")
                 theoryRab_old = activeCellAtEdit_old.TheoryRab;
@@ -255,11 +255,11 @@ namespace Kernel_of_curriculum {
         }
 
         private void dtGridElement_CellEditEnding(object sender,DataGridCellEditEndingEventArgs e) {
-            if (Keyboard.IsKeyDown(Key.Escape) && e.Column.Header.ToString() == "Название дисциплины   ") {
+            if (Keyboard.IsKeyDown(Key.Escape) && e.Column.Header.ToString() == "Название элемента   ") {
                 var nmdisp = e.EditingElement as TextBox;
                 nmdisp.Text = name_old;
             }
-            if (Keyboard.IsKeyDown(Key.Escape) && e.Column.Header.ToString() == "Сокр. назв. дисциплины   ") {
+            if (Keyboard.IsKeyDown(Key.Escape) && e.Column.Header.ToString() == "Сокр. назв. элемента   ") {
                 var nmdisp = e.EditingElement as TextBox;
                 nmdisp.Text = sokrName_old;
             }

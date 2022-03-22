@@ -107,7 +107,4 @@ d:\VKR\Kernel_of_curriculum_02_03 - Copy\Kernel_of_curriculum\obj\Debug\netcorea
 d:\VKR\Kernel_of_curriculum_02_03 - Copy\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Kernel_of_curriculum.genruntimeconfig.cache
 D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Kernel_of_curriculum.csproj.Fody.CopyLocal.cache
 D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\bin\Debug\netcoreapp3.1\CoreCurriculum.db
-D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\bin\Debug\netcoreapp3.1\Interop.Microsoft.Office.Interop.Excel.dll
 D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Kernel_of_curriculum.csproj.AssemblyReference.cache
-D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Interop.Microsoft.Office.Interop.Excel.dll
-D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Kernel_of_curriculum.csproj.ResolveComReference.cache

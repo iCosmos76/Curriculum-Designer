@@ -40,13 +40,13 @@
                   CellEditEnding="dtGridElement_CellEditEnding">
             <control:FilterDataGrid.Columns>
                 <control:DataGridTextColumn                  
-                    Header="Название дисциплины   "                                   
+                    Header="Название элемента   "                                   
                     IsColumnFiltered="True"
                     HeaderStyle="{StaticResource CenterGridHeaderStyle}"
                     MinWidth="400"  
                     Binding="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"/>
                 <control:DataGridTextColumn 
-                    Header="Сокр. назв. дисциплины   " 
+                    Header="Сокр. назв. элемента   " 
                     IsColumnFiltered="True"
                     HeaderStyle="{StaticResource CenterGridHeaderStyle}" 
                     MinWidth="170"  

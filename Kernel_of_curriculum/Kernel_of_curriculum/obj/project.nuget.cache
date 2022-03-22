@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "e/VEc7ebBiZojtH7jO796yHvbu3MaShwSofh1rM0x6LJNoBgLa9i5+YnuQiZWTgYqzvnJWnrbuo9G8gXnW2DtA==",
+  "dgSpecHash": "PmIQTm47R2OTLQF8cvwSb+mre6HuiMpQPGmRtYUsYrYYBXrVBMYUqmyWP/fjCw5IT3erOT/0eNgMvt8UW4EdBA==",
   "success": true,
   "projectFilePath": "D:\\VKR\\Kernel_of_curriculum\\Kernel_of_curriculum\\Kernel_of_curriculum.csproj",
   "expectedPackageFiles": [
@@ -104,7 +104,8 @@
     "C:\\Users\\belou\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\belou\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
     "C:\\Users\\belou\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\belou\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\belou\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\belou\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.22\\microsoft.netcore.app.host.win-x64.3.1.22.nupkg.sha512"
   ],
   "logs": [
     {
