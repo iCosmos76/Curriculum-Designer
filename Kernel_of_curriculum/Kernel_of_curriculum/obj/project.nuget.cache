@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PmIQTm47R2OTLQF8cvwSb+mre6HuiMpQPGmRtYUsYrYYBXrVBMYUqmyWP/fjCw5IT3erOT/0eNgMvt8UW4EdBA==",
+  "dgSpecHash": "6jWJrxvDIqlJGIBQTup04gdD/sERFWg7EWfczMkvxcQGBEbwjTSJaS1A9YpeJFK7ZXn4h9p+NfHbISx9fN9hdA==",
   "success": true,
-  "projectFilePath": "D:\\VKR\\Kernel_of_curriculum\\Kernel_of_curriculum\\Kernel_of_curriculum.csproj",
+  "projectFilePath": "d:\\VKR\\Kernel_of_curriculum\\Kernel_of_curriculum\\Kernel_of_curriculum.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\belou\\.nuget\\packages\\costura.fody\\5.7.0\\costura.fody.5.7.0.nupkg.sha512",
     "C:\\Users\\belou\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",

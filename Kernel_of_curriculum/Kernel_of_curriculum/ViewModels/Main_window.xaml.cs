@@ -9,6 +9,7 @@ using System.Collections;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using Microsoft.Win32;
+using static Kernel_of_curriculum.Models.Disccipline;
 
 namespace Kernel_of_curriculum {
     /// <summary>
