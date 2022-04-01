@@ -95,12 +95,11 @@ d:\VKR\Kernel_of_curriculum_02_03 - Copy\Kernel_of_curriculum\obj\Debug\netcorea
 d:\VKR\Kernel_of_curriculum_02_03 - Copy\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Kernel_of_curriculum.genruntimeconfig.cache
 D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Kernel_of_curriculum.csproj.Fody.CopyLocal.cache
 D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\bin\Debug\netcoreapp3.1\CoreCurriculum.db
-D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Kernel_of_curriculum.csproj.AssemblyReference.cache
 d:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Views\Disciplines_editor.g.cs
 d:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Views\ListKategoriy.g.cs
-d:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Views\Main_window.g.cs
-d:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Views\Tile.g.cs
 d:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Views\Disciplines_editor.baml
 d:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Views\ListKategoriy.baml
-d:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Views\Main_window.baml
-d:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Views\Tile.baml
+D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\UserControl\Tile.g.cs
+D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\UserControl\Tile.baml
+D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Main_window.g.cs
+D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\obj\Debug\netcoreapp3.1\Main_window.baml

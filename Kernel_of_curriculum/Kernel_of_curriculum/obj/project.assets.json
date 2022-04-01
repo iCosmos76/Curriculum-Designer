@@ -5869,11 +5869,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\VKR\\Kernel_of_curriculum\\Kernel_of_curriculum\\Kernel_of_curriculum.csproj",
+      "projectUniqueName": "D:\\VKR\\Kernel_of_curriculum\\Kernel_of_curriculum\\Kernel_of_curriculum.csproj",
       "projectName": "Kernel_of_curriculum",
-      "projectPath": "d:\\VKR\\Kernel_of_curriculum\\Kernel_of_curriculum\\Kernel_of_curriculum.csproj",
+      "projectPath": "D:\\VKR\\Kernel_of_curriculum\\Kernel_of_curriculum\\Kernel_of_curriculum.csproj",
       "packagesPath": "C:\\Users\\belou\\.nuget\\packages\\",
-      "outputPath": "d:\\VKR\\Kernel_of_curriculum\\Kernel_of_curriculum\\obj\\",
+      "outputPath": "D:\\VKR\\Kernel_of_curriculum\\Kernel_of_curriculum\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -9,7 +9,7 @@
         xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml" x:Name="wndEditorElements" 
         x:Class="Kernel_of_curriculum.Disciplines_editor"
         mc:Ignorable="d"
-        Title="Редактор элементов" Height="650" Width="1480" Background="White" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" WindowState="Normal" Icon="/58922-kernel-logo-arch-linux-png-download-free.png" Loaded="wndEditorElements_Loaded">
+        Title="Редактор дисциплин" Height="650" Width="1480" Background="White" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" WindowState="Normal" Icon="/58922-kernel-logo-arch-linux-png-download-free.png" Loaded="wndEditorElements_Loaded">
     
     <Window.Resources>
         <Style x:Key="CenterGridHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
@@ -23,9 +23,9 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnAddElement" Content="Добавить элемент" Click="btnAddElement_Click" RenderTransformOrigin="0.527,-0.158" FontSize="13" Grid.Column="1" Height="34" VerticalAlignment="Bottom"/>
-        <Button x:Name="btnDelElement" Content="Удалить элемент" Click="btnDelElement_Click" Height="34" VerticalAlignment="Bottom" FontSize="13"/>
-        <Button x:Name="btnApplyChanges" Content="Выбрать элемент" Click="btnApplyChanges_Click" Grid.Column="2" FontSize="13" Height="34" VerticalAlignment="Bottom"/>
+        <Button x:Name="btnAddElement" Content="Добавить дисциплину" Click="btnAddElement_Click" RenderTransformOrigin="0.527,-0.158" FontSize="13" Grid.Column="1" Height="34" VerticalAlignment="Bottom"/>
+        <Button x:Name="btnDelElement" Content="Удалить дисциплину" Click="btnDelElement_Click" Height="34" VerticalAlignment="Bottom" FontSize="13"/>
+        <Button x:Name="btnApplyChanges" Content="Выбрать дисциплину" Click="btnApplyChanges_Click" Grid.Column="2" FontSize="13" Height="34" VerticalAlignment="Bottom"/>
 
         <control:FilterDataGrid                  
                   x:Name="dtGridElement" 
@@ -40,13 +40,13 @@
                   CellEditEnding="dtGridElement_CellEditEnding">
             <control:FilterDataGrid.Columns>
                 <control:DataGridTextColumn                  
-                    Header="Название элемента   "                                   
+                    Header="Название дисциплины   "                                   
                     IsColumnFiltered="True"
                     HeaderStyle="{StaticResource CenterGridHeaderStyle}"
                     MinWidth="400"  
                     Binding="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"/>
                 <control:DataGridTextColumn 
-                    Header="Сокр. назв. элемента   " 
+                    Header="Сокр. назв. дисциплины   " 
                     IsColumnFiltered="True"
                     HeaderStyle="{StaticResource CenterGridHeaderStyle}" 
                     MinWidth="170"  

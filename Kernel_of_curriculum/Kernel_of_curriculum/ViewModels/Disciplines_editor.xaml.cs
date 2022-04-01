@@ -84,7 +84,7 @@ namespace Kernel_of_curriculum {
 
         }
 
-        // фокус на последнюю строку при добавлении элемента
+        // фокус на последнюю строку при добавлении дисциплины
         private void SelectRowByIndex(DataGrid dtGridElement,int rowIndex) {
             if (!dtGridElement.SelectionUnit.Equals(DataGridSelectionUnit.FullRow))
                 throw new ArgumentException("The SelectionUnit of the DataGrid must be set to FullRow.");
@@ -128,7 +128,7 @@ namespace Kernel_of_curriculum {
                 }
                 else if (multi_dell.Count > 1) {
                     var dialogResult = System.Windows.MessageBox.Show($"Вы уверены что хотите удалить " +
-                        $"выбранные элементы?",
+                        $"выбранные дисциплины?",
                     "Внимание!",MessageBoxButton.YesNo,MessageBoxImage.Question);
 
                     if (dialogResult == MessageBoxResult.Yes) {
@@ -153,7 +153,7 @@ namespace Kernel_of_curriculum {
                 DialogResult = true;
             }
             else
-                System.Windows.MessageBox.Show("Выберите элемент или элементы из списка!","Ошибка",
+                System.Windows.MessageBox.Show("Выберите дисциплину или дисциплины из списка!","Ошибка",
                     MessageBoxButton.OK,MessageBoxImage.Error,MessageBoxResult.OK);
 
         }
@@ -195,9 +195,9 @@ namespace Kernel_of_curriculum {
         private void dtGridElement_BeginningEdit(object sender,DataGridBeginningEditEventArgs e) {
             activeCellAtEdit_old = (Discipline_DataGrid)dtGridElement.SelectedItem;
             
-            if (e.Column.Header.ToString() == "Название элемента   ")
+            if (e.Column.Header.ToString() == "Название дисциплины   ")
                 name_old = activeCellAtEdit_old.Name;
-            if (e.Column.Header.ToString() == "Сокр. назв. элемента   ")
+            if (e.Column.Header.ToString() == "Сокр. назв. дисциплины   ")
                 sokrName_old = activeCellAtEdit_old.SokrName;
             if (e.Column.Header.ToString() == "Теор. обучение (з.е.)   ")
                 theoryRab_old = activeCellAtEdit_old.TheoryRab;
@@ -254,11 +254,11 @@ namespace Kernel_of_curriculum {
         }
 
         private void dtGridElement_CellEditEnding(object sender,DataGridCellEditEndingEventArgs e) {
-            if (Keyboard.IsKeyDown(Key.Escape) && e.Column.Header.ToString() == "Название элемента   ") {
+            if (Keyboard.IsKeyDown(Key.Escape) && e.Column.Header.ToString() == "Название дисциплины   ") {
                 var nmdisp = e.EditingElement as TextBox;
                 nmdisp.Text = name_old;
             }
-            if (Keyboard.IsKeyDown(Key.Escape) && e.Column.Header.ToString() == "Сокр. назв. элемента   ") {
+            if (Keyboard.IsKeyDown(Key.Escape) && e.Column.Header.ToString() == "Сокр. назв. дисциплины   ") {
                 var nmdisp = e.EditingElement as TextBox;
                 nmdisp.Text = sokrName_old;
             }
