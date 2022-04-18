@@ -1,0 +1,10 @@
+1.	Федеральный государственный образовательный стандарт высшего образования: [Электронный ресурс]. URL: https://fgosvo.ru/uploadfiles/FGOS%20VO%203++/Bak/090303_B_3_23062021.pdf
+2.	Анализ требований к информационной системе: [Электронный ресурс]. URL: https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7_%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9
+3.	Гома Х. UML. Проектирование систем реального времени, параллельных и распределенных приложений: Пер. с англ. - М.: ДМ К Пресс, 2011. - 704 с. [45 c., 48 c.]
+4.	Автоматизированная система «Учебные планы»: [Электронный ресурс]. URL: https://www.mmis.ru/programs/plany#gallery-1
+5.	Программный продукт «1С:Университет ПРОФ»: [Электронный ресурс]. URL: https://solutions.1c.ru/catalog/university-prof/features
+6.	Программный продукт «Информационная система управления учебным процессом вуза»: [Электронный ресурс]. URL: http://oreluniver.ru/page/support/isuup/about
+7.	Шаблон проектирования MVVM: [Электронный ресурс]. URL: https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwij49mZpYn3AhUyAxAIHa8_CEkQFnoECAcQAQ&url=https%3A%2F%2Fwhatis.techtarget.com%2Fdefinition%2FModel-View-ViewModel&usg=AOvVaw2gDtqaX09MPEHRBODjdPw0
+
+
+[7, c. 13]
