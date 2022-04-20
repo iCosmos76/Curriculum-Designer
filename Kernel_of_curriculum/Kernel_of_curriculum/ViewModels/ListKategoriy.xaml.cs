@@ -112,11 +112,18 @@ namespace Kernel_of_curriculum {
 
         private void btnSelectKat_Click(object sender,RoutedEventArgs e) {
 
-            if (dtKategories.SelectedItem != null) 
-                DialogResult = true;         
+            var cnt_sel_cat = dtKategories.SelectedItems;
+
+            if (dtKategories.SelectedItem != null) {
+                if (cnt_sel_cat.Count == 1)
+                    DialogResult = true;
+                else
+                    MessageBox.Show("Выбрать можно только одну категорию!","Ошибка",
+                        MessageBoxButton.OK,MessageBoxImage.Error,MessageBoxResult.OK);
+            }
             else
-                MessageBox.Show("Выберите категорию!", "Ошибка", 
-                    MessageBoxButton.OK,MessageBoxImage.Error,MessageBoxResult.OK);           
+                MessageBox.Show("Выберите категорию!","Ошибка",
+                    MessageBoxButton.OK,MessageBoxImage.Error,MessageBoxResult.OK);
         }
 
         public string SelKat() {

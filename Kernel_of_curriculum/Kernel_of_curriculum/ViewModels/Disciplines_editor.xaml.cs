@@ -171,15 +171,15 @@ namespace Kernel_of_curriculum {
             kt.ShowDialog();
 
             if(kt.DialogResult == true) {
+                
                 idK_kategory_new = kt.SelIdK();
-                kategory_new = UpdKat.NameK = kt.SelKat();
-                UpdKat.CvetK = kt.SelCvetK();
-
-                if (idK_kategory_new != idK_kategory_old || idK_kategory_old == 0)
+                
+                if (idK_kategory_new != idK_kategory_old || idK_kategory_old == 0) {
+                    kategory_new = UpdKat.NameK = kt.SelKat();
+                    UpdKat.CvetK = kt.SelCvetK();
                     SqliteDataAccessDisp.UpdateIdK(UpdKat.IdDisp,idK_kategory_new);
-
-            }
-       
+                }               
+            }  
         }
 
         private void btnAddCategory_PreviewMouseDown(object sender,MouseButtonEventArgs e) {

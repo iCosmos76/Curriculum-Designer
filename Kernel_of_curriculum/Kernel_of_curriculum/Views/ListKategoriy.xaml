@@ -25,7 +25,7 @@
             AutoGenerateColumns="False" 
             CanUserAddRows="False" 
             CanUserResizeColumns="False" 
-            SelectionMode="Single"
+            SelectionMode="Extended"
             Height="414" 
             VerticalAlignment="Top" 
             Grid.ColumnSpan="3" 
