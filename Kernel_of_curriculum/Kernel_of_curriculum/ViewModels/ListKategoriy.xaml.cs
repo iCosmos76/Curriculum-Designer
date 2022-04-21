@@ -65,10 +65,10 @@ namespace Kernel_of_curriculum {
             var kat_save = new Kategory_Conn_Date_Base("...",Colors.GreenYellow.ToString());
 
             SqliteDataAccessKat.AddKat(kat_save);
-            sqlkat = SqliteDataAccessKat.LoadKat();
+            sqlkat = SqliteDataAccessKat.LoadLastKat();
 
-            kategories.Add(new Kategory_with_Color(sqlkat[sqlkat.Count - 1].IdK,sqlkat[sqlkat.Count - 1].NameK,
-                (Color)ColorConverter.ConvertFromString(sqlkat[sqlkat.Count - 1].CvetK)));
+            kategories.Add(new Kategory_with_Color(sqlkat[0].IdK,sqlkat[0].NameK,
+                (Color)ColorConverter.ConvertFromString(sqlkat[0].CvetK)));
 
         }
 

@@ -49,7 +49,7 @@ namespace Kernel_of_curriculum {
 
             try {
                 SqliteDataAccessDisp.AddDisp("...","...",0,"...",3,0,0,0,0);
-                sqllastdisp = SqliteDataAccessDisp.LoadLastDisp();
+                sqllastdisp = SqliteDataAccessDisp.LoadLastDiscp();
 
                 //Debug.WriteLine(sqllastdisp[0].NameK.GetType());
 
@@ -109,7 +109,7 @@ namespace Kernel_of_curriculum {
 
         private void btnDelElement_Click(object sender,RoutedEventArgs e) {
             
-            var single_cell = (Discipline_DataGrid)dtGridElement.SelectedItem;
+            var single_del = (Discipline_DataGrid)dtGridElement.SelectedItem;
 
             var multi_dell = dtGridElement.SelectedItems;
 
@@ -118,11 +118,11 @@ namespace Kernel_of_curriculum {
             if (multi_dell.Count > 0) {
                 if (multi_dell.Count == 1) {
 
-                    var dialogResult = System.Windows.MessageBox.Show($"Вы уверены что хотите удалить {single_cell.Name}?",
+                    var dialogResult = System.Windows.MessageBox.Show($"Вы уверены что хотите удалить {single_del.Name}?",
                     "Внимание!",MessageBoxButton.YesNo,MessageBoxImage.Question);
 
                     if (dialogResult == MessageBoxResult.Yes) {
-                        SqliteDataAccessDisp.DelDisp(single_cell.IdDisp);
+                        SqliteDataAccessDisp.DelDiscp(single_del.IdDisp);
                         disciplines.RemoveAt(dtGridElement.SelectedIndex);
                     }
                 }
@@ -134,7 +134,7 @@ namespace Kernel_of_curriculum {
                     if (dialogResult == MessageBoxResult.Yes) {
                         for (int i = multi_dell.Count - 1; i >= 0; i--) {
                             elem = (Discipline_DataGrid)multi_dell[i];
-                            SqliteDataAccessDisp.DelDisp(elem.IdDisp);
+                            SqliteDataAccessDisp.DelDiscp(elem.IdDisp);
                             disciplines.Remove((Discipline_DataGrid)multi_dell[i]);
                         }
                     }
@@ -158,7 +158,7 @@ namespace Kernel_of_curriculum {
 
         }
 
-        public IList list_of_elements() {
+        public IList get_list_of_elements() {
             var selected_items = dtGridElement.SelectedItems;
             return selected_items;
         }
@@ -265,7 +265,7 @@ namespace Kernel_of_curriculum {
         }
 
         private void wndEditorElements_Loaded(object sender,RoutedEventArgs e) {
-            sqldisp = SqliteDataAccessDisp.LoadDisp();
+            sqldisp = SqliteDataAccessDisp.LoadDiscp();
 
             try {
                 for (int i = 0; i < sqldisp.Count; i++) {
@@ -286,9 +286,9 @@ namespace Kernel_of_curriculum {
 
                 }
 
-                if (SqliteDataAccessDisp.LoadDispIdKNull() != null) {
+                if (SqliteDataAccessDisp.LoadDiscpIdKNull() != null) {
 
-                    sqldispidknull = SqliteDataAccessDisp.LoadDispIdKNull();
+                    sqldispidknull = SqliteDataAccessDisp.LoadDiscpIdKNull();
 
                     for (int i = 0; i < sqldispidknull.Count; i++) {
 

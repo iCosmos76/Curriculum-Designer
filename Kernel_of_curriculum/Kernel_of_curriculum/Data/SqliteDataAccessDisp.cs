@@ -9,7 +9,7 @@ using static Kernel_of_curriculum.Models.Disccipline;
 namespace Kernel_of_curriculum {
     public class SqliteDataAccessDisp {
 
-        public static List<Discipline_Conn_Data_Base> LoadDisp() {
+        public static List<Discipline_Conn_Data_Base> LoadDiscp() {
             try {
                 using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) {
                     var output = cnn.Query<Discipline_Conn_Data_Base>(
@@ -27,7 +27,7 @@ namespace Kernel_of_curriculum {
             
         }
 
-        public static List<Discipline_Conn_Data_Base> LoadLastDisp() {
+        public static List<Discipline_Conn_Data_Base> LoadLastDiscp() {
 
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) {
                 var output = cnn.Query<Discipline_Conn_Data_Base>(
@@ -39,7 +39,7 @@ namespace Kernel_of_curriculum {
             }
         }
 
-        public static List<Discipline_Conn_Data_Base> LoadDispIdKNull() {
+        public static List<Discipline_Conn_Data_Base> LoadDiscpIdKNull() {
 
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) {
                 var output = cnn.Query<Discipline_Conn_Data_Base>(
@@ -62,7 +62,7 @@ namespace Kernel_of_curriculum {
             }
         }
 
-        public static void DelDisp(int IdDisp) {
+        public static void DelDiscp(int IdDisp) {
 
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) {
                 cnn.Execute("delete from Discipline " +

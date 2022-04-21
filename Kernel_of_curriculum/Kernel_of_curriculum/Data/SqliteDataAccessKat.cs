@@ -16,6 +16,18 @@ namespace Kernel_of_curriculum {
             }
         }
 
+        public static List<Kategory_Conn_Date_Base> LoadLastKat() {
+
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) {
+                var output = cnn.Query<Kategory_Conn_Date_Base>(
+                    "select * " +
+                    "from Kategory " +
+                    "order by IdK " +
+                    "desc limit 1;",new DynamicParameters());
+                return output.ToList();
+            }
+        }
+
         public static void AddKat(Kategory_Conn_Date_Base kateg) {
 
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) {

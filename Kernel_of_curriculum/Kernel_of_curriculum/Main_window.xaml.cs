@@ -838,11 +838,8 @@ namespace Kernel_of_curriculum {
                 tilesBank.Add((Tile)listBoxBank[i].Content);
 
             for (int i = 0; i < tilesBank.Count; i++) {
-                if (tilesBank[i].btnThrowOfTile.IsMouseOver) {
-                    itemsBank.RemoveAt(i);
-                    tilesBank.RemoveAt(i);
-                    listBoxBank.RemoveAt(i);
-                }
+                if (tilesBank[i].btnThrowOfTile.IsMouseOver)
+                    itemsBank.RemoveAt(i);         
             }
         }
 
@@ -865,8 +862,6 @@ namespace Kernel_of_curriculum {
                 if (tilesFrstSem[i].btnThrowOfTile.IsMouseOver) {
                     delElem = (ListBoxItem)itemsFrstSem[i];
                     itemsFrstSem.RemoveAt(i);
-                    tilesFrstSem.RemoveAt(i);
-                    listBoxItemsFrstSem.RemoveAt(i);
                 }
             }
 
@@ -894,8 +889,6 @@ namespace Kernel_of_curriculum {
                 if (tilesScndSem[i].btnThrowOfTile.IsMouseOver) {
                     delElem = (ListBoxItem)itemsScndSem[i];
                     itemsScndSem.RemoveAt(i);
-                    tilesScndSem.RemoveAt(i);
-                    listBoxItemsScndSem.RemoveAt(i);
                 }
             }
 
@@ -923,8 +916,6 @@ namespace Kernel_of_curriculum {
                 if (tilesThrdSem[i].btnThrowOfTile.IsMouseOver) {
                     delElem = (ListBoxItem)itemsThrdSem[i];
                     itemsThrdSem.RemoveAt(i);
-                    tilesThrdSem.RemoveAt(i);
-                    listBoxItemsThrdSem.RemoveAt(i);
                 }
             }
 
@@ -952,8 +943,6 @@ namespace Kernel_of_curriculum {
                 if (tilesFrthSem[i].btnThrowOfTile.IsMouseOver) {
                     delElem = (ListBoxItem)itemsFrthSem[i];
                     itemsFrthSem.RemoveAt(i);
-                    tilesFrthSem.RemoveAt(i);
-                    listBoxItemsFrthSem.RemoveAt(i);
                 }
             }
 
@@ -981,8 +970,6 @@ namespace Kernel_of_curriculum {
                 if (tilesFfthSem[i].btnThrowOfTile.IsMouseOver) {
                     delElem = (ListBoxItem)itemsFfthSem[i];
                     itemsFfthSem.RemoveAt(i);
-                    tilesFfthSem.RemoveAt(i);
-                    listBoxItemsFfthSem.RemoveAt(i);
                 }
             }
 
@@ -1010,8 +997,6 @@ namespace Kernel_of_curriculum {
                 if (tilesSxthSem[i].btnThrowOfTile.IsMouseOver) {
                     delElem = (ListBoxItem)itemsSxthSem[i];
                     itemsSxthSem.RemoveAt(i);
-                    tilesSxthSem.RemoveAt(i);
-                    listBoxItemsSxthSem.RemoveAt(i);
                 }
             }
 
@@ -1039,8 +1024,6 @@ namespace Kernel_of_curriculum {
                 if (tilesSvnthSem[i].btnThrowOfTile.IsMouseOver) {
                     delElem = (ListBoxItem)itemsSvnthSem[i];
                     itemsSvnthSem.RemoveAt(i);
-                    tilesSvnthSem.RemoveAt(i);
-                    listBoxItemsSvnthSem.RemoveAt(i);
                 }
             }
 
@@ -1068,8 +1051,6 @@ namespace Kernel_of_curriculum {
                 if (tilesEgthSem[i].btnThrowOfTile.IsMouseOver) {
                     delElem = (ListBoxItem)itemsEgthSem[i];
                     itemsEgthSem.RemoveAt(i);
-                    tilesEgthSem.RemoveAt(i);
-                    listBoxItemsEgthSem.RemoveAt(i);
                 }
             }
 
@@ -1107,7 +1088,6 @@ namespace Kernel_of_curriculum {
 
 
                 alltiles[0] = tilesBank;
-
 
             }
             if (e.Action == NotifyCollectionChangedAction.Remove) {
@@ -1153,8 +1133,6 @@ namespace Kernel_of_curriculum {
         }
 
         private void frstSem_CollectionChanged(object sender,NotifyCollectionChangedEventArgs e) {
-
-
             if (e.Action == NotifyCollectionChangedAction.Add) {
 
                 var itms = e.NewItems;
@@ -2003,21 +1981,21 @@ namespace Kernel_of_curriculum {
         private void btnAddElem_Click(object sender,RoutedEventArgs e) {
 
             var win_discp = new Disciplines_editor();
-            IList get_list_disciplines;
+            IList list_discp;
             List<Discipline_DataGrid> convert_discp;
 
             win_discp.ShowDialog();
 
             if (win_discp.DialogResult == true) {
 
-                get_list_disciplines = win_discp.list_of_elements();
+                list_discp = win_discp.get_list_of_elements();
                 convert_discp = new List<Discipline_DataGrid>();
 
                 ListBoxItem lbi;
                 Tile elem;
 
-                for (int i = 0; i < get_list_disciplines.Count; i++)
-                    convert_discp.Add((Discipline_DataGrid)get_list_disciplines[i]);
+                for (int i = 0; i < list_discp.Count; i++)
+                    convert_discp.Add((Discipline_DataGrid)list_discp[i]);
 
                 for (int i = 0; i < convert_discp.Count; i++) {
 
