@@ -1073,10 +1073,8 @@ namespace Kernel_of_curriculum {
                 for (int i = 0; i < flds.Count; i++)
                     tiles.Add((Tile)flds[i].Content);
 
-                for (int i = 0; i < tiles.Count; i++)
+                for (int i = 0; i < tiles.Count; i++) {
                     tiles[i].btnThrowOfTile.Click += BtnThrowOfTile_Click_Bank;
-
-                for (int i = 0; i < tiles.Count; i++)
                     tilesBank.Add(new TileSer(
                         Convert.ToInt32(tiles[i].TheoryRab.Value),
                         Convert.ToInt32(tiles[i].PromAttest.Value),
@@ -1085,8 +1083,8 @@ namespace Kernel_of_curriculum {
                         tiles[i].SokrNameD.Text,
                         tiles[i].SokrNameD.ToolTip.ToString(),
                         flds[i].Background.ToString()));
-
-
+                }
+                                                
                 alltiles[0] = tilesBank;
 
             }
@@ -1100,7 +1098,6 @@ namespace Kernel_of_curriculum {
 
                 for (int i = 0; i < flds.Count; i++)
                     tiles.Add((Tile)flds[i].Content);
-
 
                 for (int i = 0; i < tiles.Count; i++)
                     tiles[i].btnThrowOfTile.Click -= BtnThrowOfTile_Click_Bank;
@@ -1154,9 +1151,7 @@ namespace Kernel_of_curriculum {
                     sumFrstSemTheoryRab += Convert.ToInt32(tiles[i].TheoryRab.Value);
                     sumFrstSemPromAttest += Convert.ToInt32(tiles[i].PromAttest.Value);
                     sumFrstSemKurs += Convert.ToInt32(tiles[i].Kurs.Value);
-                }
 
-                for (int i = 0; i < tiles.Count; i++)
                     tilesFrstSem.Add(new TileSer(
                         Convert.ToInt32(tiles[i].TheoryRab.Value),
                         Convert.ToInt32(tiles[i].PromAttest.Value),
@@ -1165,8 +1160,8 @@ namespace Kernel_of_curriculum {
                         tiles[i].SokrNameD.Text,
                         tiles[i].SokrNameD.ToolTip.ToString(),
                         flds[i].Background.ToString()));
-
-
+                }
+                    
                 alltiles[1] = tilesFrstSem;
 
                 labelfrstSem.Content = $"1  :  {sumFrstSem} ({sumFrstSemTheoryRab} + " +
@@ -1260,9 +1255,7 @@ namespace Kernel_of_curriculum {
                     sumScndSemTheoryRab += Convert.ToInt32(tiles[i].TheoryRab.Value);
                     sumScndSemPromAttest += Convert.ToInt32(tiles[i].PromAttest.Value);
                     sumScndSemKurs += Convert.ToInt32(tiles[i].Kurs.Value);
-                }
 
-                for (int i = 0; i < tiles.Count; i++)
                     tilesScndSem.Add(new TileSer(
                         Convert.ToInt32(tiles[i].TheoryRab.Value),
                         Convert.ToInt32(tiles[i].PromAttest.Value),
@@ -1271,6 +1264,7 @@ namespace Kernel_of_curriculum {
                         tiles[i].SokrNameD.Text,
                         tiles[i].SokrNameD.ToolTip.ToString(),
                         flds[i].Background.ToString()));
+                }                    
 
                 alltiles[2] = tilesScndSem;
 
@@ -1365,9 +1359,7 @@ namespace Kernel_of_curriculum {
                     sumThrdSemTheoryRab += Convert.ToInt32(tiles[i].TheoryRab.Value);
                     sumThrdSemPromAttest += Convert.ToInt32(tiles[i].PromAttest.Value);
                     sumThrdSemKurs += Convert.ToInt32(tiles[i].Kurs.Value);
-                }
 
-                for (int i = 0; i < tiles.Count; i++)
                     tilesThrdSem.Add(new TileSer(
                         Convert.ToInt32(tiles[i].TheoryRab.Value),
                         Convert.ToInt32(tiles[i].PromAttest.Value),
@@ -1376,7 +1368,8 @@ namespace Kernel_of_curriculum {
                         tiles[i].SokrNameD.Text,
                         tiles[i].SokrNameD.ToolTip.ToString(),
                         flds[i].Background.ToString()));
-
+                }
+                    
                 alltiles[3] = tilesThrdSem;
 
                 labelthrdSem.Content = $"3  :  {sumThrdSem} ({sumThrdSemTheoryRab} + " +
@@ -1471,9 +1464,7 @@ namespace Kernel_of_curriculum {
                     sumFrthSemTheoryRab += Convert.ToInt32(tiles[i].TheoryRab.Value);
                     sumFrthSemPromAttest += Convert.ToInt32(tiles[i].PromAttest.Value);
                     sumFrthSemKurs += Convert.ToInt32(tiles[i].Kurs.Value);
-                }
 
-                for (int i = 0; i < tiles.Count; i++)
                     tilesFrthSem.Add(new TileSer(
                         Convert.ToInt32(tiles[i].TheoryRab.Value),
                         Convert.ToInt32(tiles[i].PromAttest.Value),
@@ -1482,7 +1473,8 @@ namespace Kernel_of_curriculum {
                         tiles[i].SokrNameD.Text,
                         tiles[i].SokrNameD.ToolTip.ToString(),
                         flds[i].Background.ToString()));
-
+                }
+                    
                 alltiles[4] = tilesFrthSem;
 
                 labelfrthSem.Content = $"4  :  {sumFrthSem} ({sumFrthSemTheoryRab} + " +
@@ -1577,9 +1569,7 @@ namespace Kernel_of_curriculum {
                     sumFfthSemTheoryRab += Convert.ToInt32(tiles[i].TheoryRab.Value);
                     sumFfthSemPromAttest += Convert.ToInt32(tiles[i].PromAttest.Value);
                     sumFfthSemKurs += Convert.ToInt32(tiles[i].Kurs.Value);
-                }
 
-                for (int i = 0; i < tiles.Count; i++)
                     tilesFfthSem.Add(new TileSer(
                         Convert.ToInt32(tiles[i].TheoryRab.Value),
                         Convert.ToInt32(tiles[i].PromAttest.Value),
@@ -1588,7 +1578,8 @@ namespace Kernel_of_curriculum {
                         tiles[i].SokrNameD.Text,
                         tiles[i].SokrNameD.ToolTip.ToString(),
                         flds[i].Background.ToString()));
-
+                }
+                  
                 alltiles[5] = tilesFfthSem;
 
                 labelffthSem.Content = $"5  :  {sumFfthSem} ({sumFfthSemTheoryRab} + " +
@@ -1683,9 +1674,7 @@ namespace Kernel_of_curriculum {
                     sumSxthSemTheoryRab += Convert.ToInt32(tiles[i].TheoryRab.Value);
                     sumSxthSemPromAttest += Convert.ToInt32(tiles[i].PromAttest.Value);
                     sumSxthSemKurs += Convert.ToInt32(tiles[i].Kurs.Value);
-                }
 
-                for (int i = 0; i < tiles.Count; i++)
                     tilesSxthSem.Add(new TileSer(
                         Convert.ToInt32(tiles[i].TheoryRab.Value),
                         Convert.ToInt32(tiles[i].PromAttest.Value),
@@ -1694,7 +1683,8 @@ namespace Kernel_of_curriculum {
                         tiles[i].SokrNameD.Text,
                         tiles[i].SokrNameD.ToolTip.ToString(),
                         flds[i].Background.ToString()));
-
+                }
+                 
                 alltiles[6] = tilesSxthSem;
 
                 labelsxthSem.Content = $"6  :  {sumSxthSem} ({sumSxthSemTheoryRab} + " +
@@ -1789,9 +1779,7 @@ namespace Kernel_of_curriculum {
                     sumSvnthSemTheoryRab += Convert.ToInt32(tiles[i].TheoryRab.Value);
                     sumSvnthSemPromAttest += Convert.ToInt32(tiles[i].PromAttest.Value);
                     sumSvnthSemKurs += Convert.ToInt32(tiles[i].Kurs.Value);
-                }
 
-                for (int i = 0; i < tiles.Count; i++)
                     tilesSvnthSem.Add(new TileSer(
                         Convert.ToInt32(tiles[i].TheoryRab.Value),
                         Convert.ToInt32(tiles[i].PromAttest.Value),
@@ -1800,6 +1788,7 @@ namespace Kernel_of_curriculum {
                         tiles[i].SokrNameD.Text,
                         tiles[i].SokrNameD.ToolTip.ToString(),
                         flds[i].Background.ToString()));
+                }                
 
                 alltiles[7] = tilesSvnthSem;
 
@@ -1895,9 +1884,7 @@ namespace Kernel_of_curriculum {
                     sumEgthSemTheoryRab += Convert.ToInt32(tiles[i].TheoryRab.Value);
                     sumEgthSemPromAttest += Convert.ToInt32(tiles[i].PromAttest.Value);
                     sumEgthSemKurs += Convert.ToInt32(tiles[i].Kurs.Value);
-                }
 
-                for (int i = 0; i < tiles.Count; i++)
                     tilesEgthSem.Add(new TileSer(
                         Convert.ToInt32(tiles[i].TheoryRab.Value),
                         Convert.ToInt32(tiles[i].PromAttest.Value),
@@ -1906,6 +1893,7 @@ namespace Kernel_of_curriculum {
                         tiles[i].SokrNameD.Text,
                         tiles[i].SokrNameD.ToolTip.ToString(),
                         flds[i].Background.ToString()));
+                }
 
                 alltiles[8] = tilesEgthSem;
 
