@@ -62,7 +62,7 @@
             <MenuItem Header="О программе" Height="20"/>
         </Menu>
         <Button x:Name="btnAddElem" ToolTip="Пополнить банк дисциплин" Grid.RowSpan="2" VerticalAlignment="Center" Height="56" Grid.Row="1" Content="+" FontWeight="Bold" BorderThickness="0,1,1,1" Click="btnAddElem_Click"/>
-        <Label Content="Учебный план" Grid.Row="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="0,1,0,0" Height="28" FlowDirection="LeftToRight" Grid.IsSharedSizeScope="True" Grid.ColumnSpan="24" FontWeight="Bold" Margin="0,0,0,0" Grid.Column="1"/>
+        <Label x:Name="CountAllSem" Content="Учебный план  :  0" Grid.Row="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="0,1,0,0" Height="28" FlowDirection="LeftToRight" Grid.IsSharedSizeScope="True" Grid.ColumnSpan="24" FontWeight="Bold" Margin="0,0,0,0" Grid.Column="1"/>
         <Label x:Name="labelFrstKurs" Content="1  :  0" Grid.Row="2" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="0,1,0,1" Height="28" FlowDirection="LeftToRight" Grid.IsSharedSizeScope="True" FontWeight="Bold" Grid.ColumnSpan="6" Margin="0,0,0,0" Grid.Column="1"/>
         <Label x:Name="labelScndKurs" Content="2  :  0" Grid.Column="7" Grid.Row="2" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="1,1,0,1" Height="28" FlowDirection="LeftToRight" Grid.IsSharedSizeScope="True" FontWeight="Bold" Grid.ColumnSpan="6" Margin="0,0,0,0"/>
         <Label x:Name="labelThrdKurs" Content="3  :  0" Grid.Column="13" Grid.Row="2" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="1,1,0,1" Height="28" FlowDirection="LeftToRight" Grid.IsSharedSizeScope="True" FontWeight="Bold" Grid.ColumnSpan="6" Margin="0,0,0,0"/>
@@ -86,7 +86,7 @@
                 dd:DragDrop.UseDefaultDragAdorner="True" 
                 SelectionMode="Extended" 
                 Grid.Row="4" 
-                BorderThickness="0,0,1,1" BorderBrush="Black">
+                BorderThickness="0,0,1,1" BorderBrush="Black" Margin="0,0,0,0" Grid.RowSpan="2">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid
@@ -108,7 +108,7 @@
                 Grid.ColumnSpan="3" 
                 Grid.Row="4" 
                 Margin="0,0,0,0" 
-                BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="1">
+                BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="1" Grid.RowSpan="2">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid
@@ -128,7 +128,7 @@
             Grid.ColumnSpan="3" 
             Grid.Column="4" 
             Grid.Row="4" 
-            BorderBrush="Black" BorderThickness="1,0,0,1">
+            BorderBrush="Black" BorderThickness="1,0,0,1" Margin="0,0,0,0" Grid.RowSpan="2">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid
@@ -148,7 +148,7 @@
             Grid.ColumnSpan="3" 
             Grid.Column="7" 
             Grid.Row="4" 
-            BorderBrush="Black" Margin="0,0,0,0" BorderThickness="1,0,0,1">
+            BorderBrush="Black" Margin="0,0,0,0" BorderThickness="1,0,0,1" Grid.RowSpan="2">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid
@@ -168,7 +168,7 @@
             Grid.ColumnSpan="3" 
             Grid.Column="10" 
             Grid.Row="4" 
-            BorderBrush="Black" BorderThickness="1,0,0,1">
+            BorderBrush="Black" BorderThickness="1,0,0,1" Margin="0,0,0,0" Grid.RowSpan="2">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid
@@ -188,7 +188,7 @@
             Grid.ColumnSpan="3" 
             Grid.Column="13" 
             Grid.Row="4" 
-            BorderBrush="Black" Margin="0,0,0,0" BorderThickness="1,0,0,1">
+            BorderBrush="Black" Margin="0,0,0,0" BorderThickness="1,0,0,1" Grid.RowSpan="2">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid
@@ -204,11 +204,10 @@
             dd:DragDrop.IsDragSource="True"
             dd:DragDrop.IsDropTarget="True"
             dd:DragDrop.UseDefaultDragAdorner="True" 
-            SelectionMode="Extended"
-            Grid.ColumnSpan="3" 
+            SelectionMode="Extended" 
             Grid.Column="16" 
             Grid.Row="4" 
-            BorderBrush="Black" BorderThickness="1,0,0,1" Margin="0,0,0,0">
+            BorderBrush="Black" BorderThickness="1,0,0,1" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="0,0,0,0">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid
@@ -228,7 +227,7 @@
             Grid.ColumnSpan="3" 
             Grid.Column="19" 
             Grid.Row="4" 
-            BorderBrush="Black" Margin="0,0,0,0" BorderThickness="1,0,0,1">
+            BorderBrush="Black" Margin="0,0,0,0" BorderThickness="1,0,0,1" Grid.RowSpan="2">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid
@@ -248,7 +247,7 @@
             Grid.ColumnSpan="3" 
             Grid.Column="22" 
             Grid.Row="4" 
-            BorderBrush="Black" BorderThickness="1,0,0,1">
+            BorderBrush="Black" BorderThickness="1,0,0,1" Margin="0,0,0,0" Grid.RowSpan="2">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid
@@ -258,12 +257,6 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
-        <StatusBar Grid.Row="5" Grid.ColumnSpan="25" MaxHeight="29" Margin="0,0,0,0">
-            <DockPanel>
-                <Label HorizontalAlignment="Right" Content="Всего:"></Label>
-                <Label x:Name="CountAllSem" HorizontalAlignment="Left" Content="0" Width="32" Padding="0,5,5,5"/>
-            </DockPanel>
-        </StatusBar>
 
 
     </Grid>
