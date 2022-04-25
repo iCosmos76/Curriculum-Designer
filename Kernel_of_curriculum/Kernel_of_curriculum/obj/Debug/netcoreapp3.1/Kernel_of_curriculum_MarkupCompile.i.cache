@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 D:\VKR\Kernel_of_curriculum\Kernel_of_curriculum\App.xaml
-4589367827
+4776181338
 
-1296469089
+121635285559
 205-1847157320
-Main_window.xaml;UserControl\Tile.xaml;Views\Disciplines_editor.xaml;Views\ListKategoriy.xaml;
+Main_window.xaml;UserControl\Tile.xaml;Views\Disciplines_editor.xaml;Views\Kategory_editor.xaml;
 
 False
 

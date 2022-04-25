@@ -18,6 +18,8 @@ namespace Kernel_of_curriculum {
             TheoryRab.Minimum = 0;
             PromAttest.Minimum = 0;
             Kurs.Minimum = 0;
+            PromAttest.Maximum = 1;
+            Kurs.Maximum = 1;
         }
 
         private void TheoryRab_ValueChanged(object sender,RoutedPropertyChangedEventArgs<object> e) =>

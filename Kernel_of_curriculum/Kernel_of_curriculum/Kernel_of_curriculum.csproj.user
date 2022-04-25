@@ -10,7 +10,7 @@
     <Compile Update="ViewModels\Disciplines_editor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ViewModels\ListKategoriy.xaml.cs">
+    <Compile Update="ViewModels\Kategory_editor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Main_window.xaml.cs">
@@ -24,7 +24,7 @@
     <Page Update="Views\Disciplines_editor.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\ListKategoriy.xaml">
+    <Page Update="Views\Kategory_editor.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Main_window.xaml">

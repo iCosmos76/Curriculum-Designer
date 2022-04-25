@@ -141,8 +141,7 @@ namespace Kernel_of_curriculum {
 
                 labelFrstKurs.Content = $"1  :  {sumFrstSem + sumScndSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
             else {
@@ -154,8 +153,7 @@ namespace Kernel_of_curriculum {
 
                 labelFrstKurs.Content = $"1  :  {sumFrstSem + sumScndSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
         }
 
@@ -169,8 +167,7 @@ namespace Kernel_of_curriculum {
 
                 labelFrstKurs.Content = $"1  :  {sumFrstSem + sumScndSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
             else {
@@ -181,8 +178,7 @@ namespace Kernel_of_curriculum {
 
                 labelFrstKurs.Content = $"1  :  {sumFrstSem + sumScndSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
         }
 
@@ -197,8 +193,7 @@ namespace Kernel_of_curriculum {
 
                 labelFrstKurs.Content = $"1  :  {sumFrstSem + sumScndSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
             else {
@@ -210,8 +205,7 @@ namespace Kernel_of_curriculum {
 
                 labelFrstKurs.Content = $"1  :  {sumFrstSem + sumScndSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
         }
         #endregion
@@ -223,25 +217,23 @@ namespace Kernel_of_curriculum {
                 sumScndSem++;
                 sumScndSemTheoryRab++;
 
-                labelscndSem.Content = $"1  :  {sumScndSem} ({sumScndSemTheoryRab} + " +
+                labelscndSem.Content = $"2  :  {sumScndSem} ({sumScndSemTheoryRab} + " +
                     $"{sumScndSemPromAttest} + {sumScndSemKurs})";
 
                 labelFrstKurs.Content = $"1  :  {sumFrstSem + sumScndSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumScndSem--;
                 sumScndSemTheoryRab--;
 
-                labelscndSem.Content = $"1  :  {sumScndSem} ({sumScndSemTheoryRab} + " +
+                labelscndSem.Content = $"2  :  {sumScndSem} ({sumScndSemTheoryRab} + " +
                     $"{sumScndSemPromAttest} + {sumScndSemKurs})";
 
                 labelFrstKurs.Content = $"1  :  {sumFrstSem + sumScndSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -251,25 +243,23 @@ namespace Kernel_of_curriculum {
                 sumScndSem++;
                 sumScndSemPromAttest++;
 
-                labelscndSem.Content = $"1  :  {sumScndSem} ({sumScndSemTheoryRab} + " +
+                labelscndSem.Content = $"2  :  {sumScndSem} ({sumScndSemTheoryRab} + " +
                     $"{sumScndSemPromAttest} + {sumScndSemKurs})";
 
                 labelFrstKurs.Content = $"1  :  {sumFrstSem + sumScndSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumScndSem--;
                 sumScndSemPromAttest--;
 
-                labelscndSem.Content = $"1  :  {sumScndSem} ({sumScndSemTheoryRab} + " +
+                labelscndSem.Content = $"2  :  {sumScndSem} ({sumScndSemTheoryRab} + " +
                     $"{sumScndSemPromAttest} + {sumScndSemKurs})";
 
                 labelFrstKurs.Content = $"1  :  {sumFrstSem + sumScndSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -279,25 +269,23 @@ namespace Kernel_of_curriculum {
                 sumScndSem++;
                 sumScndSemKurs++;
 
-                labelscndSem.Content = $"1  :  {sumScndSem} ({sumScndSemTheoryRab} + " +
+                labelscndSem.Content = $"2  :  {sumScndSem} ({sumScndSemTheoryRab} + " +
                     $"{sumScndSemPromAttest} + {sumScndSemKurs})";
 
                 labelFrstKurs.Content = $"1  :  {sumFrstSem + sumScndSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumScndSem--;
                 sumScndSemKurs--;
 
-                labelscndSem.Content = $"1  :  {sumScndSem} ({sumScndSemTheoryRab} + " +
+                labelscndSem.Content = $"2  :  {sumScndSem} ({sumScndSemTheoryRab} + " +
                     $"{sumScndSemPromAttest} + {sumScndSemKurs})";
 
                 labelFrstKurs.Content = $"1  :  {sumFrstSem + sumScndSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -310,25 +298,23 @@ namespace Kernel_of_curriculum {
                 sumThrdSem++;
                 sumThrdSemTheoryRab++;
 
-                labelthrdSem.Content = $"1  :  {sumThrdSem} ({sumThrdSemTheoryRab} + " +
+                labelthrdSem.Content = $"3  :  {sumThrdSem} ({sumThrdSemTheoryRab} + " +
                     $"{sumThrdSemPromAttest} + {sumThrdSemKurs})";
 
-                labelScndKurs.Content = $"1  :  {sumThrdSem + sumFrthSem}";
+                labelScndKurs.Content = $"2  :  {sumThrdSem + sumFrthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumThrdSem--;
                 sumThrdSemTheoryRab--;
 
-                labelthrdSem.Content = $"1  :  {sumThrdSem} ({sumThrdSemTheoryRab} + " +
+                labelthrdSem.Content = $"3  :  {sumThrdSem} ({sumThrdSemTheoryRab} + " +
                     $"{sumThrdSemPromAttest} + {sumThrdSemKurs})";
 
-                labelScndKurs.Content = $"1  :  {sumThrdSem + sumFrthSem}";
+                labelScndKurs.Content = $"2  :  {sumThrdSem + sumFrthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -338,25 +324,23 @@ namespace Kernel_of_curriculum {
                 sumThrdSem++;
                 sumThrdSemPromAttest++;
 
-                labelthrdSem.Content = $"1  :  {sumThrdSem} ({sumThrdSemTheoryRab} + " +
+                labelthrdSem.Content = $"3  :  {sumThrdSem} ({sumThrdSemTheoryRab} + " +
                     $"{sumThrdSemPromAttest} + {sumThrdSemKurs})";
 
-                labelScndKurs.Content = $"1  :  {sumThrdSem + sumFrthSem}";
+                labelScndKurs.Content = $"2  :  {sumThrdSem + sumFrthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumThrdSem--;
                 sumThrdSemPromAttest--;
 
-                labelthrdSem.Content = $"1  :  {sumThrdSem} ({sumThrdSemTheoryRab} + " +
+                labelthrdSem.Content = $"3  :  {sumThrdSem} ({sumThrdSemTheoryRab} + " +
                     $"{sumThrdSemPromAttest} + {sumThrdSemKurs})";
 
-                labelScndKurs.Content = $"1  :  {sumThrdSem + sumFrthSem}";
+                labelScndKurs.Content = $"2  :  {sumThrdSem + sumFrthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -366,25 +350,23 @@ namespace Kernel_of_curriculum {
                 sumThrdSem++;
                 sumThrdSemKurs++;
 
-                labelthrdSem.Content = $"1  :  {sumThrdSem} ({sumThrdSemTheoryRab} + " +
+                labelthrdSem.Content = $"3  :  {sumThrdSem} ({sumThrdSemTheoryRab} + " +
                     $"{sumThrdSemPromAttest} + {sumThrdSemKurs})";
 
-                labelScndKurs.Content = $"1  :  {sumThrdSem + sumFrthSem}";
+                labelScndKurs.Content = $"2  :  {sumThrdSem + sumFrthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumThrdSem--;
                 sumThrdSemKurs--;
 
-                labelthrdSem.Content = $"1  :  {sumThrdSem} ({sumThrdSemTheoryRab} + " +
+                labelthrdSem.Content = $"3  :  {sumThrdSem} ({sumThrdSemTheoryRab} + " +
                     $"{sumThrdSemPromAttest} + {sumThrdSemKurs})";
 
-                labelScndKurs.Content = $"1  :  {sumThrdSem + sumFrthSem}";
+                labelScndKurs.Content = $"2  :  {sumThrdSem + sumFrthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -397,25 +379,23 @@ namespace Kernel_of_curriculum {
                 sumFrthSem++;
                 sumFrthSemTheoryRab++;
 
-                labelfrthSem.Content = $"1  :  {sumFrthSem} ({sumFrthSemTheoryRab} + " +
+                labelfrthSem.Content = $"4  :  {sumFrthSem} ({sumFrthSemTheoryRab} + " +
                     $"{sumFrthSemPromAttest} + {sumFrthSemKurs})";
 
-                labelScndKurs.Content = $"1  :  {sumThrdSem + sumFrthSem}";
+                labelScndKurs.Content = $"2  :  {sumThrdSem + sumFrthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumFrthSem--;
                 sumFrthSemTheoryRab--;
 
-                labelfrthSem.Content = $"1  :  {sumFrthSem} ({sumFrthSemTheoryRab} + " +
+                labelfrthSem.Content = $"4  :  {sumFrthSem} ({sumFrthSemTheoryRab} + " +
                     $"{sumFrthSemPromAttest} + {sumFrthSemKurs})";
 
-                labelScndKurs.Content = $"1  :  {sumThrdSem + sumFrthSem}";
+                labelScndKurs.Content = $"2  :  {sumThrdSem + sumFrthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -425,25 +405,23 @@ namespace Kernel_of_curriculum {
                 sumFrthSem++;
                 sumFrthSemPromAttest++;
 
-                labelfrthSem.Content = $"1  :  {sumFrthSem} ({sumFrthSemTheoryRab} + " +
+                labelfrthSem.Content = $"4  :  {sumFrthSem} ({sumFrthSemTheoryRab} + " +
                     $"{sumFrthSemPromAttest} + {sumFrthSemKurs})";
 
-                labelScndKurs.Content = $"1  :  {sumThrdSem + sumFrthSem}";
+                labelScndKurs.Content = $"2  :  {sumThrdSem + sumFrthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumFrthSem--;
                 sumFrthSemPromAttest--;
 
-                labelfrthSem.Content = $"1  :  {sumFrthSem} ({sumFrthSemTheoryRab} + " +
+                labelfrthSem.Content = $"4  :  {sumFrthSem} ({sumFrthSemTheoryRab} + " +
                     $"{sumFrthSemPromAttest} + {sumFrthSemKurs})";
 
-                labelScndKurs.Content = $"1  :  {sumThrdSem + sumFrthSem}";
+                labelScndKurs.Content = $"2  :  {sumThrdSem + sumFrthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -453,25 +431,23 @@ namespace Kernel_of_curriculum {
                 sumFrthSem++;
                 sumFrthSemKurs++;
 
-                labelfrthSem.Content = $"1  :  {sumFrthSem} ({sumFrthSemTheoryRab} + " +
+                labelfrthSem.Content = $"4  :  {sumFrthSem} ({sumFrthSemTheoryRab} + " +
                     $"{sumFrthSemPromAttest} + {sumFrthSemKurs})";
 
-                labelScndKurs.Content = $"1  :  {sumThrdSem + sumFrthSem}";
+                labelScndKurs.Content = $"2  :  {sumThrdSem + sumFrthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumFrthSem--;
                 sumFrthSemKurs--;
 
-                labelfrthSem.Content = $"1  :  {sumFrthSem} ({sumFrthSemTheoryRab} + " +
+                labelfrthSem.Content = $"4  :  {sumFrthSem} ({sumFrthSemTheoryRab} + " +
                     $"{sumFrthSemPromAttest} + {sumFrthSemKurs})";
 
-                labelScndKurs.Content = $"1  :  {sumThrdSem + sumFrthSem}";
+                labelScndKurs.Content = $"2  :  {sumThrdSem + sumFrthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -484,25 +460,23 @@ namespace Kernel_of_curriculum {
                 sumFfthSem++;
                 sumFfthSemTheoryRab++;
 
-                labelffthSem.Content = $"1  :  {sumFfthSem} ({sumFfthSemTheoryRab} + " +
+                labelffthSem.Content = $"5  :  {sumFfthSem} ({sumFfthSemTheoryRab} + " +
                     $"{sumFfthSemPromAttest} + {sumFfthSemKurs})";
 
-                labelThrdKurs.Content = $"1  :  {sumFfthSem + sumSxthSem}";
+                labelThrdKurs.Content = $"3  :  {sumFfthSem + sumSxthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumFfthSem--;
                 sumFfthSemTheoryRab--;
 
-                labelffthSem.Content = $"1  :  {sumFfthSem} ({sumFfthSemTheoryRab} + " +
+                labelffthSem.Content = $"5  :  {sumFfthSem} ({sumFfthSemTheoryRab} + " +
                     $"{sumFfthSemPromAttest} + {sumFfthSemKurs})";
 
-                labelThrdKurs.Content = $"1  :  {sumFfthSem + sumSxthSem}";
+                labelThrdKurs.Content = $"3  :  {sumFfthSem + sumSxthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -512,25 +486,23 @@ namespace Kernel_of_curriculum {
                 sumFfthSem++;
                 sumFfthSemPromAttest++;
 
-                labelffthSem.Content = $"1  :  {sumFfthSem} ({sumFfthSemTheoryRab} + " +
+                labelffthSem.Content = $"5  :  {sumFfthSem} ({sumFfthSemTheoryRab} + " +
                     $"{sumFfthSemPromAttest} + {sumFfthSemKurs})";
 
-                labelThrdKurs.Content = $"1  :  {sumFfthSem + sumSxthSem}";
+                labelThrdKurs.Content = $"3  :  {sumFfthSem + sumSxthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumFfthSem--;
                 sumFfthSemPromAttest--;
 
-                labelffthSem.Content = $"1  :  {sumFfthSem} ({sumFfthSemTheoryRab} + " +
+                labelffthSem.Content = $"5  :  {sumFfthSem} ({sumFfthSemTheoryRab} + " +
                     $"{sumFfthSemPromAttest} + {sumFfthSemKurs})";
 
-                labelThrdKurs.Content = $"1  :  {sumFfthSem + sumSxthSem}";
+                labelThrdKurs.Content = $"3  :  {sumFfthSem + sumSxthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -540,25 +512,23 @@ namespace Kernel_of_curriculum {
                 sumFfthSem++;
                 sumFfthSemKurs++;
 
-                labelffthSem.Content = $"1  :  {sumFfthSem} ({sumFfthSemTheoryRab} + " +
+                labelffthSem.Content = $"5  :  {sumFfthSem} ({sumFfthSemTheoryRab} + " +
                     $"{sumFfthSemPromAttest} + {sumFfthSemKurs})";
 
-                labelThrdKurs.Content = $"1  :  {sumFfthSem + sumSxthSem}";
+                labelThrdKurs.Content = $"3  :  {sumFfthSem + sumSxthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumFfthSem--;
                 sumFfthSemKurs--;
 
-                labelffthSem.Content = $"1  :  {sumFfthSem} ({sumFfthSemTheoryRab} + " +
+                labelffthSem.Content = $"5  :  {sumFfthSem} ({sumFfthSemTheoryRab} + " +
                     $"{sumFfthSemPromAttest} + {sumFfthSemKurs})";
 
-                labelThrdKurs.Content = $"1  :  {sumFfthSem + sumSxthSem}";
+                labelThrdKurs.Content = $"3  :  {sumFfthSem + sumSxthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -571,25 +541,23 @@ namespace Kernel_of_curriculum {
                 sumSxthSem++;
                 sumSxthSemTheoryRab++;
 
-                labelsxthSem.Content = $"1  :  {sumSxthSem} ({sumSxthSemTheoryRab} + " +
+                labelsxthSem.Content = $"6  :  {sumSxthSem} ({sumSxthSemTheoryRab} + " +
                     $"{sumSxthSemPromAttest} + {sumSxthSemKurs})";
 
-                labelThrdKurs.Content = $"1  :  {sumFfthSem + sumSxthSem}";
+                labelThrdKurs.Content = $"3  :  {sumFfthSem + sumSxthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumSxthSem--;
                 sumSxthSemTheoryRab--;
 
-                labelsxthSem.Content = $"1  :  {sumSxthSem} ({sumSxthSemTheoryRab} + " +
+                labelsxthSem.Content = $"6  :  {sumSxthSem} ({sumSxthSemTheoryRab} + " +
                     $"{sumSxthSemPromAttest} + {sumSxthSemKurs})";
 
-                labelThrdKurs.Content = $"1  :  {sumFfthSem + sumSxthSem}";
+                labelThrdKurs.Content = $"3  :  {sumFfthSem + sumSxthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -599,25 +567,23 @@ namespace Kernel_of_curriculum {
                 sumSxthSem++;
                 sumSxthSemPromAttest++;
 
-                labelsxthSem.Content = $"1  :  {sumSxthSem} ({sumSxthSemTheoryRab} + " +
+                labelsxthSem.Content = $"6  :  {sumSxthSem} ({sumSxthSemTheoryRab} + " +
                     $"{sumSxthSemPromAttest} + {sumSxthSemKurs})";
 
-                labelThrdKurs.Content = $"1  :  {sumFfthSem + sumSxthSem}";
+                labelThrdKurs.Content = $"3  :  {sumFfthSem + sumSxthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumSxthSem--;
                 sumSxthSemPromAttest--;
 
-                labelsxthSem.Content = $"1  :  {sumSxthSem} ({sumSxthSemTheoryRab} + " +
+                labelsxthSem.Content = $"6  :  {sumSxthSem} ({sumSxthSemTheoryRab} + " +
                     $"{sumSxthSemPromAttest} + {sumSxthSemKurs})";
 
-                labelThrdKurs.Content = $"1  :  {sumFfthSem + sumSxthSem}";
+                labelThrdKurs.Content = $"3  :  {sumFfthSem + sumSxthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -627,25 +593,23 @@ namespace Kernel_of_curriculum {
                 sumSxthSem++;
                 sumSxthSemKurs++;
 
-                labelsxthSem.Content = $"1  :  {sumSxthSem} ({sumSxthSemTheoryRab} + " +
+                labelsxthSem.Content = $"6  :  {sumSxthSem} ({sumSxthSemTheoryRab} + " +
                     $"{sumSxthSemPromAttest} + {sumSxthSemKurs})";
 
-                labelThrdKurs.Content = $"1  :  {sumFfthSem + sumSxthSem}";
+                labelThrdKurs.Content = $"3  :  {sumFfthSem + sumSxthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumSxthSem--;
                 sumSxthSemKurs--;
 
-                labelsxthSem.Content = $"1  :  {sumSxthSem} ({sumSxthSemTheoryRab} + " +
+                labelsxthSem.Content = $"6  :  {sumSxthSem} ({sumSxthSemTheoryRab} + " +
                     $"{sumSxthSemPromAttest} + {sumSxthSemKurs})";
 
-                labelThrdKurs.Content = $"1  :  {sumFfthSem + sumSxthSem}";
+                labelThrdKurs.Content = $"3  :  {sumFfthSem + sumSxthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -658,25 +622,23 @@ namespace Kernel_of_curriculum {
                 sumSvnthSem++;
                 sumSvnthSemTheoryRab++;
 
-                labelsvnthSem.Content = $"1  :  {sumSvnthSem} ({sumSvnthSemTheoryRab} + " +
+                labelsvnthSem.Content = $"7  :  {sumSvnthSem} ({sumSvnthSemTheoryRab} + " +
                     $"{sumSvnthSemPromAttest} + {sumSvnthSemKurs})";
 
-                labelFrthKurs.Content = $"1  :  {sumSvnthSem + sumEgthSem}";
+                labelFrthKurs.Content = $"4  :  {sumSvnthSem + sumEgthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumSvnthSem--;
                 sumSvnthSemTheoryRab--;
 
-                labelsvnthSem.Content = $"1  :  {sumSvnthSem} ({sumSvnthSemTheoryRab} + " +
+                labelsvnthSem.Content = $"7  :  {sumSvnthSem} ({sumSvnthSemTheoryRab} + " +
                     $"{sumSvnthSemPromAttest} + {sumSvnthSemKurs})";
 
-                labelFrthKurs.Content = $"1  :  {sumSvnthSem + sumEgthSem}";
+                labelFrthKurs.Content = $"4  :  {sumSvnthSem + sumEgthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -686,25 +648,23 @@ namespace Kernel_of_curriculum {
                 sumSvnthSem++;
                 sumSvnthSemPromAttest++;
 
-                labelsvnthSem.Content = $"1  :  {sumSvnthSem} ({sumSvnthSemTheoryRab} + " +
+                labelsvnthSem.Content = $"7  :  {sumSvnthSem} ({sumSvnthSemTheoryRab} + " +
                     $"{sumSvnthSemPromAttest} + {sumSvnthSemKurs})";
 
-                labelFrthKurs.Content = $"1  :  {sumSvnthSem + sumEgthSem}";
+                labelFrthKurs.Content = $"4  :  {sumSvnthSem + sumEgthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumSvnthSem--;
                 sumSvnthSemPromAttest--;
 
-                labelsvnthSem.Content = $"1  :  {sumSvnthSem} ({sumSvnthSemTheoryRab} + " +
+                labelsvnthSem.Content = $"7  :  {sumSvnthSem} ({sumSvnthSemTheoryRab} + " +
                     $"{sumSvnthSemPromAttest} + {sumSvnthSemKurs})";
 
-                labelFrthKurs.Content = $"1  :  {sumSvnthSem + sumEgthSem}";
+                labelFrthKurs.Content = $"4  :  {sumSvnthSem + sumEgthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -714,25 +674,23 @@ namespace Kernel_of_curriculum {
                 sumSvnthSem++;
                 sumSvnthSemKurs++;
 
-                labelsvnthSem.Content = $"1  :  {sumSvnthSem} ({sumSvnthSemTheoryRab} + " +
+                labelsvnthSem.Content = $"7  :  {sumSvnthSem} ({sumSvnthSemTheoryRab} + " +
                     $"{sumSvnthSemPromAttest} + {sumSvnthSemKurs})";
 
-                labelFrthKurs.Content = $"1  :  {sumSvnthSem + sumEgthSem}";
+                labelFrthKurs.Content = $"4  :  {sumSvnthSem + sumEgthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumSvnthSem--;
                 sumSvnthSemKurs--;
 
-                labelsvnthSem.Content = $"1  :  {sumSvnthSem} ({sumSvnthSemTheoryRab} + " +
+                labelsvnthSem.Content = $"7  :  {sumSvnthSem} ({sumSvnthSemTheoryRab} + " +
                     $"{sumSvnthSemPromAttest} + {sumSvnthSemKurs})";
 
-                labelFrthKurs.Content = $"1  :  {sumSvnthSem + sumEgthSem}";
+                labelFrthKurs.Content = $"4  :  {sumSvnthSem + sumEgthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -745,25 +703,23 @@ namespace Kernel_of_curriculum {
                 sumEgthSem++;
                 sumEgthSemTheoryRab++;
 
-                labelegthSem.Content = $"1  :  {sumEgthSem} ({sumEgthSemTheoryRab} + " +
+                labelegthSem.Content = $"8  :  {sumEgthSem} ({sumEgthSemTheoryRab} + " +
                     $"{sumEgthSemPromAttest} + {sumEgthSemKurs})";
 
-                labelFrthKurs.Content = $"1  :  {sumSvnthSem + sumEgthSem}";
+                labelFrthKurs.Content = $"4  :  {sumSvnthSem + sumEgthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumEgthSem--;
                 sumEgthSemTheoryRab--;
 
-                labelegthSem.Content = $"1  :  {sumEgthSem} ({sumEgthSemTheoryRab} + " +
+                labelegthSem.Content = $"8  :  {sumEgthSem} ({sumEgthSemTheoryRab} + " +
                     $"{sumEgthSemPromAttest} + {sumEgthSemKurs})";
 
-                labelFrthKurs.Content = $"1  :  {sumSvnthSem + sumEgthSem}";
+                labelFrthKurs.Content = $"4  :  {sumSvnthSem + sumEgthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -773,25 +729,23 @@ namespace Kernel_of_curriculum {
                 sumEgthSem++;
                 sumEgthSemPromAttest++;
 
-                labelegthSem.Content = $"1  :  {sumEgthSem} ({sumEgthSemTheoryRab} + " +
+                labelegthSem.Content = $"8  :  {sumEgthSem} ({sumEgthSemTheoryRab} + " +
                     $"{sumEgthSemPromAttest} + {sumEgthSemKurs})";
 
-                labelFrthKurs.Content = $"1  :  {sumSvnthSem + sumEgthSem}";
+                labelFrthKurs.Content = $"4  :  {sumSvnthSem + sumEgthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumEgthSem--;
                 sumEgthSemPromAttest--;
 
-                labelegthSem.Content = $"1  :  {sumEgthSem} ({sumEgthSemTheoryRab} + " +
+                labelegthSem.Content = $"8  :  {sumEgthSem} ({sumEgthSemTheoryRab} + " +
                     $"{sumEgthSemPromAttest} + {sumEgthSemKurs})";
 
-                labelFrthKurs.Content = $"1  :  {sumSvnthSem + sumEgthSem}";
+                labelFrthKurs.Content = $"4  :  {sumSvnthSem + sumEgthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -801,25 +755,23 @@ namespace Kernel_of_curriculum {
                 sumEgthSem++;
                 sumEgthSemKurs++;
 
-                labelegthSem.Content = $"1  :  {sumEgthSem} ({sumEgthSemTheoryRab} + " +
+                labelegthSem.Content = $"8  :  {sumEgthSem} ({sumEgthSemTheoryRab} + " +
                     $"{sumEgthSemPromAttest} + {sumEgthSemKurs})";
 
-                labelFrthKurs.Content = $"1  :  {sumSvnthSem + sumEgthSem}";
+                labelFrthKurs.Content = $"4  :  {sumSvnthSem + sumEgthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
             }
             else {
                 sumEgthSem--;
                 sumEgthSemKurs--;
 
-                labelegthSem.Content = $"1  :  {sumEgthSem} ({sumEgthSemTheoryRab} + " +
+                labelegthSem.Content = $"8  :  {sumEgthSem} ({sumEgthSemTheoryRab} + " +
                     $"{sumEgthSemPromAttest} + {sumEgthSemKurs})";
 
-                labelFrthKurs.Content = $"1  :  {sumSvnthSem + sumEgthSem}";
+                labelFrthKurs.Content = $"4  :  {sumSvnthSem + sumEgthSem}";
 
-                CountAllSem.Content = sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem +
-                    sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem;
+                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
         }
@@ -1169,7 +1121,8 @@ namespace Kernel_of_curriculum {
 
                 labelFrstKurs.Content = $"1  :  {sumFrstSem + sumScndSem}";
 
-                CountAllSem.Content = $"Учебный план  :  {sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
+                CountAllSem.Content = $"Учебный план  :  " +
+                    $"{sumFrstSem + sumScndSem + sumThrdSem + sumFrthSem + sumFfthSem + sumSxthSem + sumSvnthSem + sumEgthSem}";
 
             }
             if (e.Action == NotifyCollectionChangedAction.Remove) {
