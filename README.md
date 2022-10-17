@@ -7,3 +7,5 @@
 Необходимо нажать на + -> выбрать необходимые дисциплины, или же добавить дисциплину, путем нажатия соответствующей кнопки -> выгрузить дисциплины -> заниматься составлением учебного плана.
 
 Youtube: https://www.youtube.com/watch?v=zwbc2c6SUZA
+
+[![Watch the video](https://img.youtube.com/vi/T-D1KVIuvjA/0.jpg)](https://www.youtube.com/watch?v=zwbc2c6SUZA)
